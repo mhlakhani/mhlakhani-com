@@ -1,0 +1,13 @@
+---
+---
+- if item[:kind] == 'article'
+  .meta
+    %ul.tags
+      %li= pretty_time(item[:created_at])
+      - if item[:tags]
+        %li 
+          Tagged with:
+          - item[:tags].sort.each do |tag|
+            %li 
+              %a(href="/blog/tags/#{tag}/" class='tag')
+                = tag

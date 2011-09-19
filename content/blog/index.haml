@@ -1,0 +1,31 @@
+---
+title: Hasnain Lakhani's Blog
+---
+
+%div.row
+  %div.span8
+    %h1 Recent Posts
+
+    - oldest_item = nil
+    - current_index = 0
+
+    - sorted_articles.each do |item|
+      - if item[:featured] != 0
+        - next
+      - if current_index == excerpt_count
+        - break
+      - current_index += 1
+      - oldest_item = item
+      = render('_excerpt', :item => item) 
+                    
+    -#= render('_other_articles_nav', :reference_item => oldest_item, :older_only => true)
+  
+  %div.span8(style="border-left: 1px solid #eee; margin-left: 0; padding-left: 19px; min-height: 600px;")
+    %h1 Popular Posts
+    
+    - oldest_item = nil
+    - current_index = 0
+    
+    - featured_articles[0..featured_count].each do |item|
+      - oldest_item = item
+      = render('_excerpt', :item => item) 

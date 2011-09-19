@@ -1,0 +1,12 @@
+output/*
+tmp/*
+*.swp
+*~
+.DS_Store
+.bundle
+output.diff
+*.*.un~
+output/*
+tmp/*
+compiler.jar
+.sass-cache

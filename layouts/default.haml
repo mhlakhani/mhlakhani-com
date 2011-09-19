@@ -1,0 +1,23 @@
+!!! Strict
+%html
+  %head
+    %title Hasnain Lakhani's Website
+    %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
+    %link(href="/static/css/stylesheet.css" rel="stylesheet" type="text/css")
+    = render('_ganalytics')
+
+  %body(style="padding-top: 60px;")
+    %div.topbar
+      %div.topbar-inner
+        %div.container-fluid
+          %a.brand(href="/") Hasnain Lakhani's Website
+          %ul.nav
+            %li.active
+              %a(href="/") Home
+            %li
+              %a(href="/blog/") Blog
+    
+    = yield
+
+    %footer
+      %p &copy; Muhammad Hasnain Lakhani 2011
