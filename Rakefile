@@ -64,6 +64,7 @@ task :compile_static do
   sh 'mkdir -p static/build/css'
   sh 'mkdir -p static/build/js'
   sh 'mkdir -p static/build/img'
+  sh 'mkdir -p static/build/pdf'
 
   puts "Compliling LESS into CSS"
   sh 'lessc static/src/less/bootstrap.less --compress > static/build/css/stylesheet.css'
@@ -72,13 +73,23 @@ task :compile_static do
   #sh 'cp static/src/css/* static/build/css'
   
   puts 'Combining CSS files'
-  sh 'cat static/src/css/* >> static/build/css/stylesheet.css'
+  sh 'cat static/src/css/cssbakery_captions.css >> static/build/css/stylesheet.css'
+  sh 'cat static/src/css/prettify.css >> static/build/css/stylesheet.css'
+
+  sh 'cat static/src/css/shadowbox.css >> static/build/css/stylesheet.css'
+
+  puts 'Copying CSS files'
+  sh 'cp static/src/css/reset-fonts-grids.css static/build/css/reset-fonts-grids.css'
+  sh 'cp static/src/css/resume.css static/build/css/resume.css'
 
   puts "Combining and minifying JS"
   sh "java -jar compiler.jar --js_output_file static/build/js/scripts.js --js static/src/js/prettify.js --js static/src/js/shadowbox.js"
 
   puts "Copying image files"
   sh 'cp -R static/src/img/* static/build/img'
+
+  puts "Copying PDF files"
+  sh 'cp -R static/src/pdf/* static/build/pdf'
 
   puts "Copying all static files"
   sh 'mkdir -p output/static'

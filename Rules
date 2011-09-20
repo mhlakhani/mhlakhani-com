@@ -62,6 +62,10 @@ compile '/blog/*/*/' do
   layout 'blogpost'
 end
 
+compile '/resume/' do
+    filter :haml
+end
+
 compile '*' do
   # item[:extension] returns 'html.erb' for multi-dotted filename
   ext = item[:extension].nil? ? nil : item[:extension].split('.').last
