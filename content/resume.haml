@@ -1,0 +1,203 @@
+!!! Strict
+%html
+  %head
+    %title Hasnain Lakhani's Resume
+    %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
+    %link(href="/static/css/reset-fonts-grids.css" rel="stylesheet" type="text/css")
+    %link(href="/static/css/resume.css" rel="stylesheet" type="text/css")
+    
+    = render('_ganalytics')
+    
+  %body
+    .yui-t7#doc2
+      #inner
+        #hd
+          .yui-gc
+            .yui-u.first
+              %h1 Hasnain Lakhani
+              %h2 Developer, Entrepreneur
+            .yui-u
+              .contact-info
+                %h3
+                  %a#pdf(href="/static/pdf/resume.pdf") Download PDF
+                %h3
+                  %a(href="mailto:m.hasnain.lakhani@gmail.com")m.hasnain.lakhani@gmail.com
+                %h3 (+92) 332 - 222 - 9327
+        
+        #bd
+          #yui-main
+            .yui-b
+              .yui-gf
+                .yui-u.first
+                  %h2 Profile
+                .yui-u
+                  %p.enlarge
+                    Interested in theoretical research to advance the pinnacle of knowledge, as well as building something to help the masses.
+              .yui-gf
+                .yui-u.first
+                  %h2 Open Source
+                .yui-u
+                  .talent
+                    %h2 QuranApp.net
+                    %p Web Application that allows users to create document collections of various Quranic Ayats.
+                  .talent
+                    %h2 mhlakhani.com
+                    %p Source code for this website and blog.
+              .yui-gf
+                .yui-u.first
+                  %h2 Technical
+                .yui-u
+                  %ul.talent
+                    %li 
+                      %strong Languages
+                    %li Python
+                    %li C++
+                    %li C#
+                    %li.last Java
+                  %ul.talent
+                    %li 
+                      %strong Frameworks
+                    %li Flask
+                    %li Django
+                    %li wxPython
+                    %li.last WinForms
+                  %ul.talent
+                    %li 
+                      %strong Platforms
+                    %li Web
+                    %li Samsung Bada
+                    %li Windows
+                    %li.last Linux
+                  %ul.talent
+                    %li 
+                      %strong Libraries
+                    %li SQLAlchemy
+                    %li Reportlab
+                    %li BeautifulSoup
+                    %li.last xhtml2pdf
+                  %hr
+                  %ul.talent
+                    %li 
+                      %strong Software
+                    %li gVim
+                    %li Visual Studio
+                    %li Eclipse
+                    %li.last Netbeans
+                  %ul.talent
+                    %li 
+                      %strong Databases
+                    %li MySQL
+                    %li Postgres
+                    %li MS-SQL
+                    %li.last Redis
+                  %ul.talent
+                    %li 
+                      %strong VCS
+                    %li Git
+                    %li Bazaar
+                    %li SVN
+                    %li.last Mercurial
+                  %ul.talent
+                    %li 
+                      %strong Misc
+                    %li PDF Generation
+                    %li Scripting
+                    %li Excel Automation
+                    %li.last MATLAB
+              .yui-gf
+                .yui-u.first
+                  %h2 Experience
+                .yui-u
+                  .job
+                    %h2 Anahata Solutions
+                    %h3 CTO
+                    %h4 2010 - Present
+                    %p 
+                      Developing a line of applications for the Samsung Bada platform. 
+                      Creating a distributed analytics solution. 
+                      Writing web service back-ends for Android applications. Making strategic business decisions.
+                      Managing a team of developers.
+
+                  .job
+                    %h2 Lahore University of Management Sciences
+                    %h3 Teaching Assistant, Discrete Mathematics
+                    %h4 2011
+                    %p 
+                      Holding tutorials and office hours. Grading assignments and quizzes. Handling administrative activities.
+
+                  .job
+                    %h2 Pakistan International School
+                    %h3 Software Developer
+                    %h4 2009
+                    %p Developed the admission registration system as part of a school project; utilizing MySQL, Python, wxPython(GUI) and reportlab(PDF generation) to allow users to manage the registration process efficiently.
+
+                  .job.last
+                    %h2 Saudi Business Machines
+                    %h3 Software Development Internee
+                    %h4 2008
+                    %p Testing new software and writing feasibility reports. Attending external conferences to explore new technologies and report on them. Basic training in WebSphere, WSDL and SOAP web services.
+
+              .yui-gf
+                .yui-u.first
+                  %h2 Education
+                .yui-u.job
+                  %h2 School of Science and Engineering, LUMS, Pakistan
+                  %h3 
+                    BS in Computer Science &mdash; 
+                    %strong 3.86 CGPA, 4.00 SCGPA
+                  %h4 2013 (Expected)
+                .yui-u.job
+                  %h2 Pakistan International School, English Section, Riyadh, Saudi Arabia 
+                  %h3 A Levels with 4 As in Mathematics, Physics, Chemistry and Computing 
+                  %h4 2009
+                  
+              .yui-gf
+                .yui-u.first
+                  %h2 Awards
+                .yui-u
+                  .job
+                    %h2 Speed Programming Competition, GIKI Softcom '10
+                    %h3 Winner
+                    %h4 2010
+                  .job
+                    %h2 IEEE National CodinGuru '10
+                    %h3 Third Position
+                    %h4 2010
+                  .job.last
+                    %h2 Intra-LUMS CodinGuru '09
+                    %h3 Third Position
+                    %h4 2009
+                
+              .yui-gf
+                .yui-u.first
+                  %h2 Academic Interests
+                .yui-u
+                  %ul.talent
+                    %li Algorithms
+                    %li Discrete Mathematics
+                  %ul.talent
+                    %li Functional Programming
+                    %li Compilers
+                  %ul.talent
+                    %li Data Provenance
+                    %li Distributed Systems 
+                  %ul.talent
+                    %li Artificial Intelligence
+                    %li Machine Learning
+
+              .yui-gf.last
+                .yui-u.first
+                  %h2 Projects
+                .yui-u
+                  %ul
+                    %li Steganography with mazes in MATLAB
+                    %li Firefighting robot using DTMF
+                    %li School Admission Registration System
+                    %li Bulk Image Badge Generation System
+                    %li PDF Reportcard Generation System
+        
+        #ft
+          %p
+            Hasnain Lakhani &mdash;
+            %a(href="mailto:m.hasnain.lakhani@gmail.com")m.hasnain.lakhani@gmail.com
+            &mdash; (+92) 332 - 222 - 9327
