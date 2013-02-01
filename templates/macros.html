@@ -1,0 +1,10 @@
+{% macro image(src, caption="hello") %}
+    <div class="thumbnail">
+        <img src="{{ src }}" title="{{ Caption }}"/>
+        <br />
+        <div class="caption alert alert-info">
+            <p>{{ caption }}</p>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+{% endmacro %}

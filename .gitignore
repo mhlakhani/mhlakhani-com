@@ -10,3 +10,8 @@ output/*
 tmp/*
 compiler.jar
 .sass-cache
+*.sublime-*
+sync.sh
+cache
+env/*
+*.pyc

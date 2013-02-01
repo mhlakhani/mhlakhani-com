@@ -1,0 +1,18 @@
+{
+    "route" : "blogrss"
+}
+
+<rss version="2.0">
+    <channel>
+        <title>{{ rss.title }}</title>
+        <link>{{ rss.link }}</link>
+        <description>{{ rss.description }}</description>
+        {% for item in rss['items'] %}
+        <item>
+            <title>{{ item.title }}</title>
+            <link>{{ item.link }}</link>
+            <description>{{ item.description }}</description>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>
