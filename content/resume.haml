@@ -4,7 +4,7 @@
   
   "name": "Hasnain Lakhani",
   "email": "m.hasnain.lakhani@gmail.com",
-  "phone": "(+92) 332-222-9327",
+  "phone": "(650) 289-8191",
   
   "tagline": "Developer, Entrepreneur",
   "profile": "Interested in practical research to advance the pinnacle of knowledge, as well as building something to help the masses.",
@@ -44,9 +44,15 @@
   
   "jobs": [
     {
+      "company": "SRI International",
+      "position": "Software Engineer",
+      "period": "October 2013 - Present",
+      "description": "Security development for content-centric mobile networks. Focusing on security usability and productization of next generation mobile networking infrastructure."
+    },
+    {
       "company": "Anahata Solutions",
       "position": "CTO",
-      "period": "2010 - Present",
+      "period": "June 2010 - May 2013",
       "description": "Developing a line of applications for the Samsung Bada platform. Creating a distributed analytics solution. Writing web service back-ends for Android applications. Making strategic business decisions. Managing a team of developers."
     },
     {
@@ -58,37 +64,26 @@
     {
       "company": "Lahore University of Management Sciences",
       "position": "Research Assistant",
-      "period": "June 2011 - Present",
+      "period": "June 2011 - June 2013",
       "description": "Research into computer networks, computer security, distributed systems, and data provenance."
     },
     {
       "company": "Lahore University of Management Sciences",
       "position": "Teaching Assistant",
-      "period": "2011",
-      "description": "Holding tutorials and office hours. Grading quizzes. Handling administrative activities."
-    },
-    {
-      "company": "Pakistan International School",
-      "position": "Software Developer",
-      "period": "2009",
-      "description": "Developed the admission registration system as part of a school project; utilizing MySQL, Python, wxPython(GUI) and reportlab(PDF generation) to allow users to manage the registration process efficiently."
-    },
-    {
-      "company": "Saudi Business Machines",
-      "position": "Software Development Internee",
-      "period": "2008",
-      "description": "Testing new software and writing feasibility reports. Attending external conferences to explore new technologies and report on them. Basic training in WebSphere, WSDL and SOAP web services."
+      "period": "August 2011 - May 2013",
+      "description": "Holding tutorials and office hours. Grading quizzes. Handling administrative activities. Courses: Discrete Math (Fall 2011), Data Structures (Spring 2012), Network Security (Spring 2013)."
     }
+
   ],
   
   "education": [
     {
       "institution": "Lahore University of Management Sciences",
-      "graduation": "2013 (Expected)",
-      "description": "BS in Computer Science &mdash; 3.90 CGPA, 4.00 SCGPA"
+      "graduation": "2013",
+      "description": "BS in Computer Science &mdash; 3.91 CGPA, 4.00 SCGPA, Gold Medalist"
     },
     {
-      "institution": "Pakistan International School, English Section, Riyadh, Saudi Arabia",
+      "institution": "PISES, Riyadh, Saudi Arabia",
       "graduation": "2009",
       "description": "A Levels with 4 As in Mathematics, Physics, Chemistry and Computing"
     }
@@ -169,6 +164,17 @@
               
               .yui-gf
                 .yui-u.first
+                  %h2 << Experience
+                .yui-u
+                  -for job in jobs
+                    %div class="job{% if loop.last %} last{% endif %}"
+                      %h2 << {{ job.company }}
+                      %h3 << {{ job.position }}
+                      %h4 << {{ job.period }}
+                      %p << {{ job.description }}
+              
+              .yui-gf
+                .yui-u.first
                   %h2 << Open Source
                 .yui-u
                   -for item in open_source
@@ -193,17 +199,6 @@
                     -if not loop.last
                       %hr
                   
-              .yui-gf
-                .yui-u.first
-                  %h2 << Experience
-                .yui-u
-                  -for job in jobs
-                    %div class="job{% if loop.last %} last{% endif %}"
-                      %h2 << {{ job.company }}
-                      %h3 << {{ job.position }}
-                      %h4 << {{ job.period }}
-                      %p << {{ job.description }}
-
               .yui-gf
                 .yui-u.first
                   %h2 << Education
