@@ -11,6 +11,8 @@
 
 If you follow the technology scene a fair bit, you might have heard of [AWS (Amazon Web Services)](http://aws.amazon.com/). If not, all you need to know is that it allows you to build powerful applications for use on the web. It could be likened to renting computers by the hour, in a sense (for the EC2 service). Being the geek that I am, I decided to give their free tier a spin a while back; and see for myself what all the hype was about. The [free usage tier](http://aws.amazon.com/free/) is great for learning the ropes, and, well, it's free. I fired up a few instances in the first few days, ran some basic code, tried it all out. So far, so good. Seamless experience, it seemed to live up to the hype.
 
+### Update: The EC2 free tier now includes [1GB free Regional data transfer](http://aws.amazon.com/ec2/pricing/), so this post is mostly just here for reference.
+
 And then a few days later, I saw the bill. I'd taken full care not to do anything outside the free usage limits, but it seems a charge had snuck by. Some sort of "Regional data transfer" charge.  
 
 {{ image("/static/img/2011/01/bill1.jpg", "Exhibit A") }}
