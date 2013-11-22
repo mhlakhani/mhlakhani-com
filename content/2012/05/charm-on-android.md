@@ -25,7 +25,7 @@ $ANDROID_NDK/build/tools/make-standalone-toolchain.sh --platform=android-9 --ins
 export PATH=$PATH:~/apps/android-sdk-linux/tools
 export PATH=$PATH:~/apps/android-sdk-linux/platform-tools
 export PATH=$PATH:~/apps/android-toolchain/bin
-export PATH=$PATH:~/apps/android-ndk-r7c/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86
+export PATH=$PATH:~/apps/android-ndk-r7b/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86
 </pre>
 
 Compiling Python for Android (Py4A)
