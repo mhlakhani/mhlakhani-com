@@ -10,8 +10,8 @@
     
     %h1 << Archives
       
-    -for (year, months) in blogarchives.iteritems()
-      -for (month, posts) in months.iteritems()
+    -for (year, months) in blogarchives.items()
+      -for (month, posts) in months.items()
         %h2 << {{ year }} {{ month }}
         -for post in posts
           .excerpt

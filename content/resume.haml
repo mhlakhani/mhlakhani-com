@@ -188,7 +188,7 @@
                   %h2 << Technical
                 .yui-u
                   -for row in technical
-                    -for skill, items in row.iteritems()
+                    -for skill, items in row.items()
                       %ul.talent
                         %li 
                           %strong << {{ skill }}

@@ -50,12 +50,12 @@
     %h1 << {{ calltoaction }}
     %p << {{ catchphrase }}
     %p
-      -for (message, url) in visitbuttons.iteritems()
+      -for (message, url) in visitbuttons.items()
         %a.btn.btn-primary.btn-large style="margin-right: 10px;" href={{ url }} << {{ message }} &raquo;
   
   .row-fluid
   
-    -for (heading, item) in griditems.iteritems()
+    -for (heading, item) in griditems.items()
       .span4
         %h2 << {{ heading }}
         

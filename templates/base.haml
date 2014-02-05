@@ -47,10 +47,10 @@
           .well.sidebar-nav
             %ul.nav.nav-list
             
-              -for (header, links) in sidebar.iteritems()
+              -for (header, links) in sidebar.items()
                 %li.nav-header << {{ header }}
                 
-                -for (blurb,link) in links.iteritems()
+                -for (blurb,link) in links.items()
                   %li
                     %a href="{{ link }}" << {{ blurb }}
         
