@@ -35,11 +35,23 @@
                   %a href="/" << Home
                 %li
                   %a href="{{ url_for("blogindex") }}" << Blog
-              -else
                 %li
-                  %a href="/" << Home
-                %li.active
-                  %a href="{{ url_for("blogindex") }}" << Blog
+                  %a href="{{ url_for("readerscornerhome") }}" << Reader's Corner
+              -else
+                -if readerscornerpage
+                  %li
+                    %a href="/" << Home
+                  %li
+                    %a href="{{ url_for("blogindex") }}" << Blog
+                  %li.active
+                    %a href="{{ url_for("readerscornerhome") }}" << Reader's Corner
+                -else
+                  %li
+                    %a href="/" << Home
+                  %li.active
+                    %a href="{{ url_for("blogindex") }}" << Blog
+                  %li
+                    %a href="{{ url_for("readerscornerhome") }}" << Reader's Corner
     
     .container-fluid
       .row-fluid
@@ -60,4 +72,4 @@
       %hr
       
       %footer
-        %p << &copy; Muhammad Hasnain Lakhani 2013
+        %p << &copy; Muhammad Hasnain Lakhani 2014

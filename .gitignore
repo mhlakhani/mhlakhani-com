@@ -15,3 +15,5 @@ sync.sh
 cache
 env/*
 *.pyc
+filterdata.py
+links.txt

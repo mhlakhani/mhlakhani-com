@@ -1,0 +1,64 @@
+{
+  "route": "readerscornerpage",
+  "title": "Hasnain Lakhani's Blog - Reader's Corner",
+  "readerscornerpage": true,
+  "monthnames": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+}
+
+-extends "base.haml"
+-block content
+
+  .row-fluid
+    
+    %h1 << Reader's Corner for {{ monthname }} {{ year }}
+    .pagination
+      %ul
+        -if (year+1) in readerscorner
+          %li
+            %a.permalink href="{{ url_for("readerscornerpage", year=year+1, month=1) }}" 
+              &laquo; {{ year + 1 }}
+        -for (month, ac) in readerscorner[year].items()
+          %li class="{% if monthnames[month-1] == monthname %} active {% endif %}"
+            %a.permalink href="{{ url_for("readerscornerpage", year=year, month=month) }}" 
+              {{ monthnames[month-1] }}
+        -if (year-1) in readerscorner
+          %li
+            %a.permalink href="{{ url_for("readerscornerpage", year=year-1, month=12) }}" 
+              {{ year - 1 }} &raquo;
+
+    -for (day, dayarchive) in montharchive.items()
+        %h2 << {{ monthname }} {{ day }}, {{ year }}
+        %br
+        -for entry in dayarchive
+          .alert.alert-info
+            %h3
+              %a.permalink href="{{ entry.link }}" title="Full article" rel="nofollow" << &raquo; {{ entry.name }}
+            -if entry.caption
+              %p << {{ entry.caption }}
+            -if entry.description
+              %p 
+                %em << {{ entry.description }}
+
+          -if entry.message
+            %blockquote
+              %p << {{ entry.message | replace("\n", "<br>") }}
+
+            -if not loop.last
+              %br
+
+    %br
+    .pagination
+      %ul
+        -if (year+1) in readerscorner
+          %li
+            %a.permalink href="{{ url_for("readerscornerpage", year=year+1, month=1) }}" 
+              &laquo; {{ year + 1 }}
+        -for (month, ac) in readerscorner[year].items()
+          %li class="{% if monthnames[month-1] == monthname %} active {% endif %}"
+            %a.permalink href="{{ url_for("readerscornerpage", year=year, month=month) }}" 
+              {{ monthnames[month-1] }}
+        -if (year-1) in readerscorner
+          %li
+            %a.permalink href="{{ url_for("readerscornerpage", year=year-1, month=12) }}" 
+              {{ year - 1 }} &raquo;
+

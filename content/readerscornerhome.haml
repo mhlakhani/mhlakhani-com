@@ -1,0 +1,23 @@
+{
+  "route": "readerscornerhome",
+  "title": "Hasnain Lakhani's Blog - Reader's Corner",
+  "readerscornerpage": true
+}
+
+-extends "base.haml"
+-block content
+
+  .row-fluid
+    
+    %h1 << Reader's Corner
+
+    %p 
+      This is a collection of links that I've shared over the years (along with my comments where present), as an easily browsable archive. 
+
+    -for (header, links) in sidebar.items()
+      %h2 << {{ header }}
+      
+      %ul.nav.nav-pills
+        -for (blurb,link) in links.items()
+          %li
+            %a href="{{ link }}" << {{ blurb }}
