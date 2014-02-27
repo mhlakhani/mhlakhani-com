@@ -1,0 +1,115 @@
+{
+  "route": "readerscornersearch",
+  "title": "Hasnain Lakhani's Blog - Reader's Corner Search",
+  "readerscornerpage": true
+}
+
+-extends "base.haml"
+
+-block script
+
+  %script src="/static/js/jquery-2.1.0.min.js"
+  %script src="/static/js/jquery-ui.min.js"
+
+  %script
+    $(function() {
+      var invertedIndex = {{ readerscornerindex }};
+
+      var data = []
+
+      for (var key in invertedIndex) {
+        data.push({label: key, value: invertedIndex[key]})
+      }
+
+      $( "#search" ).autocomplete({
+        minLength: 2,
+        source: data,
+        focus: function( event, ui ) {
+          $( "#search" ).val( ui.item.label );
+          return false;
+        },
+        select: function( event, ui ) {
+          $( "#search" ).val( ui.item.label );
+
+          var urls = [];
+          for (var i in ui.item.value) {
+            urls.push( "{{ url_for("readerscornersearch") }}" + "/" + ui.item.value[i] + ".json");
+          }
+
+          var jxhr = [];
+          var result = [];
+          $.each(urls, function (i, url) {
+              jxhr.push(
+                  $.getJSON(url, function (json) {
+                      result.push(json);
+                  })
+              );
+          });
+
+          $.when.apply($, jxhr).done(function() {
+            results = $( "#results" );
+            results.empty();
+            for (var i in result) {
+              item = result[i];
+              var baseItem = $( "<div class=\"alert alert-info\">" );
+              var name = "";
+              if ("name" in item) {
+                name = item.name;
+              }
+              baseItem.append( "<h3><a class=\"permalink\" href=\"" + item.link + "\" title=\"Full article\" rel=\"nofollow\">&raquo; " + name + "</a></h3>" );
+
+              if ("caption" in item) {
+                baseItem.append( "<p>" + item.caption + "</p>" );
+              }
+
+              if ("description" in item) {
+                baseItem.append( "<p><em>" + item.description + "</em></p>" );
+              }
+
+              baseItem.appendTo(results);
+
+              if ("message" in item) {
+                var quoteItem = $( "<blockquote>" );
+                quoteItem.append( "<p>" + item.message + "</p>" );
+                quoteItem.appendTo(results);
+              }
+
+            }
+          });
+   
+          return false;
+        },
+        search: function( event, ui ) {
+          results = $( "#results" );
+          results.empty();
+        }
+      }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+        query = $("#search").val();
+        pos = item.label.search(query);
+        left = item.label.substring(0, pos);
+        mid = item.label.substring(pos, pos+query.length);
+        right = item.label.substring(pos+query.length, item.label.length);
+        return $( "<li>" ).append( "<a>" + left + "<b>" + mid + "</b>" + right + " (" + item.value.length + ")" + "</a>" ).appendTo( ul );
+      };
+    });
+
+-block css
+
+  %link rel="stylesheet" href="/static/css/jquery-ui.css"
+
+-block content
+
+  .row-fluid
+    
+    %h1 << Reader's Corner Search
+
+    %br
+
+    %input.span9.search-query#search type="text" placeholder="Enter Query"
+
+    .clearfix
+
+    %br
+    %br
+
+    #results

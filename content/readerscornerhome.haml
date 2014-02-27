@@ -14,7 +14,10 @@
     %p 
       This is a collection of links that I've shared over the years (along with my comments where present), as an easily browsable archive. 
 
-    -for (header, links) in sidebar.items()
+    %a href="{{ url_for("readerscornersearch") }}"
+      You can also search the archive here.
+
+    -for (header, links) in sidebar.items() if header != 'Main'
       %h2 << {{ header }}
       
       %ul.nav.nav-pills

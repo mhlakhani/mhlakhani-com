@@ -70,12 +70,14 @@ routes = {
         'tag' : '/blog/tag/{tag}/',
         'resume' : '/resume/',
         'readerscornerhome' : '/readers-corner/',
-        'readerscornerpage' : '/readers-corner/{year}/{month}/'
+        'readerscornerpage' : '/readers-corner/{year}/{month}/',
+        'readerscornersearch' : '/readers-corner/search/',
+        'readerscornerjsonitem' : '/readers-corner/search/{id}.json'
 }
 
 base_deps = ['templates/base.haml', 'templates/macros.haml']
 post_deps = ['templates/base.haml', 'templates/macros.haml', 'templates/blogpost.haml', 'tags']
-readers_corner_deps = base_deps + ['readerscorner', 'readerscornersidebar']
+readers_corner_deps = base_deps + ['readerscorner', 'readerscornersidebar', 'readerscornerindex']
 
 sources = [
         ('Page', 'content/index.haml', {}, base_deps),
@@ -91,6 +93,8 @@ sources = [
         ('StaticContent', 'static/img/*/*/*', {}, []),
         ('Page', 'content/readerscornerhome.haml', {'readerscornersidebar' : 'sidebar'}, readers_corner_deps),
         ('ReadersCornerPage', 'content/readerscornerpage.haml', {'readerscornersidebar' : 'sidebar', 'readerscorner' : 'readerscorner'}, readers_corner_deps),
+        ('Page', 'content/readerscornersearch.haml', {'readerscornersidebar' : 'sidebar', 'readerscornerindex' : 'readerscornerindex'}, readers_corner_deps),
+        ('ReadersCornerJSONItem', 'content/readerscornerjsonitem.json', {'readerscornersidebar' : 'sidebar', 'readerscorner' : 'readerscorner'}, readers_corner_deps),
 ]
 
 processors = [
@@ -103,7 +107,7 @@ processors = [
     ('PostArchives', {'key' : 'blogarchives'}),
     ('RSSFeed', {'key' : 'rss', 'count' : 5, 'title' : "Hasnain Lakhani's Blog", 'link': 'http://mhlakhani.com/blog/', 'description': "Hasnain Lakhani's Blog", 'sortkey': 'date'}),
     ('Sitemap', {'key' : 'sitemap', 'root' : 'http://mhlakhani.com'}),
-    ('ReadersCorner', {'key' : 'readerscorner', 'filename' : 'links.txt', 'sidebarkey' : 'readerscornersidebar', 'route' : 'readerscornerpage', 'filter' : _filter})
+    ('ReadersCorner', {'key' : 'readerscorner', 'filename' : 'links.txt', 'sidebarkey' : 'readerscornersidebar', 'indexkey' : 'readerscornerindex', 'route' : 'readerscornerpage', 'filter' : _filter, 'homeroute' : 'readerscornerhome', 'searchroute' : 'readerscornersearch', 'stopwords' : filterdata.stopwords})
 ]
 
 data = {
