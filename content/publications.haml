@@ -1,0 +1,99 @@
+{
+  "route": "publications",
+  "title": "Hasnain Lakhani's Website - Publications",
+  "publicationspage": true,
+
+  "sidebar": {
+  },
+
+  "entries": {
+    "2015": [
+      {
+        "file": "ACSAC2015",
+        "conference": "2015 Annual Computer Security Applications Conference",
+        "conference_home_url": "https://www.acsac.org/2015/",
+        "doi": "TBD",
+        "doi_url": "#",
+        "title": "Decentralized Authorization and Privacy-Enhanced Routing for Information-Centric Networks",
+        "authors": ["Mariana Raykova", "Hasnain Lakhani", "Hasanat Kazmi", "Ashish Gehani"],
+        "abstract": "As information-centric networks are deployed in increasingly diverse settings, there is a growing need to protect the privacy of participants. We describe the design, implementation, and evaluation of a security framework that achieves this. It ensures the integrity and confidentiality of published content, the associated descriptive metadata, and the interests of subscribers. Publishers can scope access to the content, as well as which nodes in the network can broker access to it. Subscribers can limit which nodes can see their interests. Scopes are defined as policies over attributes of the individual nodes. The system transparently realizes the policies with suitable cryptographic primitives. It supports deployment in hetero-geneous mobile ad hoc environments where trust may derive from multiple independent sources. Further, no external public key infrastructure is assumed. We also report on the overhead that the security adds in actual deployments on Android devices."
+      },
+      {
+        "note": "Excellent Paper Award",
+        "file": "ICUFN2015",
+        "conference": "The Seventh International Conference on Ubiquitous and Future Networks",
+        "conference_home_url": "http://2015.icufn.org/main/",
+        "doi": "10.1109/ICUFN.2015.7182686",
+        "doi_url": "http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7182686",
+        "title": "Evaluation of a Delay-Tolerant ICN Architecture",
+        "authors": ["Hasnain Lakhani", "Timothy McCarthy", "Minyoung Kim", "David E. Wilkins", "Samuel Wood"],
+        "abstract": "Simulation/emulation is key for early testing, assess­ment, and scalability evaluation of networking solutions for mo­bile ad-hoc networks (MANETs). If the solution is highly config­urable - such as ENCODERS, SRI's delay-tolerant information­ centric networking (ICN) solution - this type of evaluation is crucial. For effective modeling of information flows, the test framework needs to: (1) allow repeatable execution of scenarios with different patterns of network traffic, operating in different mobility and network-usage contexts, (2) provide a rich simulated environment that can model virtually any network topology and mobility, with high-fidelity device models, and (3) support flexible large-scale simulation, with the option of using virtual machines that execute the same code that would be used on an actual device. We describe our evaluation framework and the results of using it to develop and evaluate ENCODERS."
+      },
+      {
+        "file": "PACIS2015",
+        "conference": "The 19th Pacific Asia Conference on Information Systems",
+        "conference_home_url": "http://pacis2015.org/",
+        "doi": "PACIS 2015 Proceedings",
+        "doi_url": "http://aisel.aisnet.org/pacis2015/134/",
+        "title": "A Classification Based Framework to Predict Viral Threads",
+        "authors": ["Hashim Sharif", "Saad Ismail", "Shehroze Farooqi", "Mohammad Taha Khan", "Muhammad Ali Gulzar", "Hasnain Lakhani", "Fareed Zaffar", "Ahmed Abbasi"],
+        "abstract": "Online social media allows consumers to engage with each other and to create, share, discuss and modify user-generated content in a highly interactive way. Social media platforms have therefore become critical for companies trying to gauge the pulse of consumers, help identify issues faster, receive immediate feedback on products and offering etc. An effective social media strategy therefore requires companies to mine large volumes of structured unstructured and semi-structured online textual data in order to gain insights into the underlying traits of the consumers and prevailing public opinion. These insights can provide opportunities for market research, protection of brand reputation and a mechanism to gauge user preferences in an attempt to maximize customer satisfaction and consumer-brand engagement. In this paper, we propose and evaluate a classification based framework to predict thread lengths in online discussion forums in order to identify potential topics that may of interest to a particular online community. We identify and evaluate several key features of viral social media conversations through extensive experiments conducted on health 2.0 datasets. We also present a pharmaceutical industry based case study to illustrate how well the viral thread topics relate to real world events."
+      }
+    ],
+    "2014": [
+      {
+        "file": "ICC2014",
+        "conference": "2014 IEEE International Conference on Communications",
+        "conference_home_url": "http://icc2014.ieee-icc.org/",
+        "doi": "10.1109/ICC.2014.6883411",
+        "doi_url": "http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6883411",
+        "title": "Covert Channels in Online Rogue-like Games",
+        "authors": ["Hasnain Lakhani", "Fareed Zaffar"],
+        "abstract": "Covert channels allow two parties to exchange secret data in the presence of adversaries without disclosing the fact that there is any secret data in their communications. We propose and implement EEDGE, an improved method for steganography in mazes that builds upon the work done by Lee et al; and has a significantly higher embedding capacity. We apply EEDGE to the setting of online rogue-like games, which have randomly generated mazes as the levels for players; and show that this can be used to successfully create an efficient, error-free, high bit-rate covert channel."
+      }
+    ],
+    "2013": [
+      {
+        "file": "HICSS2013",
+        "conference": "Hawaii International Conference on System Sciences",
+        "conference_home_url": "http://www.hicss.org/",
+        "doi": "10.1109/HICSS.2013.434",
+        "doi_url": "http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6480439",
+        "title": "Optimized Rollback and Re-computation",
+        "authors": ["Hasnain Lakhani", "Rashid Tahir", "Azeem Aqil", "Fareed Zaffar", "Dawood Tariq", "Ashish Gehani"],
+        "abstract": "Large data processing tasks can be effected using workflow management systems. When either the input data or the programs in the pipeline are modified, the workflow must be re-executed to ensure that the final output data is updated to reflect the changes. Since such re-computation can consume substantial resources, optimizing the system to avoid redundant computation is desirable. In the case of a workflow, the depen- dency relationships between files are specified at the outset and can be leveraged to track which programs need to be re-executed when particular files change. Current distributed systems cannot provide such functionality when no predefined workflows exist. In this paper, we present an architecture that provides functionality to produce both correct output as well as fast re-execution by leveraging the provenance of data to propagate changes along an implicit dependency graph. We explore the tradeoff between storage and availability by presenting a performance analysis of our rollback and re-execution scheme."
+      }
+    ]
+  }
+}
+
+-extends "base.haml"
+-block content
+
+  %h1 << Publications
+
+  %p << This page contains a list of all my publications, in chronological order
+
+  -for (year, items) in entries.items()
+    %h1 << {{ year }}
+    -for item in items
+      %h2 << {{ item.title }}
+      %p
+        -for author in item.authors
+          -if author != "Hasnain Lakhani"
+            {{ author }}{% if not loop.last %},{% endif %}
+          -else
+            <strong>{{ author }}</strong>{% if not loop.last %},{% endif %}
+      -if item.note
+        %h4 << {{ item.note }}
+      %a href={{ item.conference_home_url }} << {{ item.conference }}
+      %p
+        %strong << DOI:
+        %a href={{ item.doi_url }} << {{ item.doi }}
+      %a href=/static/pdf/{{ item.file }}.pdf << Link to full text version
+      %br
+      %br
+      %strong << Abstract
+      %br
+      %br
+      %blockquote << {{ item.abstract }}

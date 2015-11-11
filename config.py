@@ -62,13 +62,14 @@ except Exception:
 
 routes = {
         'index' : '/',
+        'publications' : '/publications/',
         'blogindex' : '/blog/',
         'blogarchives' : '/blog/archives/',
         'blogrss' : '/blog/rss.xml',
         'sitemap' : '/sitemap.xml',
         'post' : '/blog/{year}/{month}/{slug}/',
         'tag' : '/blog/tag/{tag}/',
-        'resume' : '/resume/',
+        'resume' : '/static/pdf/resume.pdf',
         'readerscornerhome' : '/readers-corner/',
         'readerscornerpage' : '/readers-corner/{year}/{month}/',
         'readerscornersearch' : '/readers-corner/search/',
@@ -81,7 +82,7 @@ readers_corner_deps = base_deps + ['readerscorner', 'readerscornersidebar', 'rea
 
 sources = [
         ('Page', 'content/index.haml', {}, base_deps),
-        ('Page', 'content/resume.haml', {}, base_deps),
+        ('Page', 'content/publications.haml', {}, base_deps),
         ('Page', 'content/blog*.haml', {'blogsidebar' : 'sidebar'}, post_deps),
         ('BlogPost', 'content/*/*/*.md', {'blogsidebar' : 'sidebar', 'blogposttemplate' : 'template', 'blogpostonload' : 'onload'}, post_deps),
         ('TagPage', 'content/tag.haml', {'blogsidebar' : 'sidebar'}, post_deps),
@@ -116,7 +117,7 @@ data = {
         ('Archives','blogarchives'),
         ('RSS Feed','blogrss')
     ]),
-    
+
     'blogposttemplate' : 'blogpost.haml',
     'blogpostonload' : 'prettyPrint();'
 }
