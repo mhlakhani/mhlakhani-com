@@ -37,37 +37,21 @@
                   %a href="{{ url_for("blogindex") }}" << Blog
                 %li
                   %a href="{{ url_for("publications") }}" << Publications
-                %li
-                  %a href="{{ url_for("readerscornerhome") }}" << Reader's Corner
               -else
-                -if readerscornerpage
+                -if publicationspage
                   %li
                     %a href="/" << Home
                   %li
                     %a href="{{ url_for("blogindex") }}" << Blog
+                  %li.active
+                    %a href="{{ url_for("publications") }}" << Publications
+                -else
+                  %li
+                    %a href="/" << Home
+                  %li.active
+                    %a href="{{ url_for("blogindex") }}" << Blog
                   %li
                     %a href="{{ url_for("publications") }}" << Publications
-                  %li.active
-                    %a href="{{ url_for("readerscornerhome") }}" << Reader's Corner
-                -else
-                  -if publicationspage
-                    %li
-                      %a href="/" << Home
-                    %li
-                      %a href="{{ url_for("blogindex") }}" << Blog
-                    %li.active
-                      %a href="{{ url_for("publications") }}" << Publications
-                    %li
-                      %a href="{{ url_for("readerscornerhome") }}" << Reader's Corner
-                  -else
-                    %li
-                      %a href="/" << Home
-                    %li.active
-                      %a href="{{ url_for("blogindex") }}" << Blog
-                    %li
-                      %a href="{{ url_for("publications") }}" << Publications
-                    %li
-                      %a href="{{ url_for("readerscornerhome") }}" << Reader's Corner
 
     .container-fluid
       .row-fluid
