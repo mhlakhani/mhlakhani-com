@@ -7,13 +7,35 @@
   },
 
   "entries": {
+    "2016": [
+      {
+        "file": "NCA2016",
+        "conference": "The 15th IEEE International Symposium on Network Computing and Applications",
+        "conference_home_url": "http://www.ieee-nca.org/2016/",
+        "doi": "10.1109/NCA.2016.7778643",
+        "doi_url": "https://ieeexplore.ieee.org/document/7778643/",
+        "title": "To route or to secure: Tradeoffs in ICNs over MANETs",
+        "authors": ["Hasanat Kazmi", "Hasnain Lakhani", "Ashish Gehani", "Rashid Tahir", "Fareed Zaffar"],
+        "abstract": "Information-Centric Networks (ICNs) operating over Mobile Ad hoc Networks (MANETs) are challenged by the node churn, evolving topologies, and limited resources of the underlying network. The complex interplay of publishers, subscribers, and brokers brings with it a corresponding set of security concerns, where precisely-defined trust boundaries are needed to guarantee the confidentiality and integrity of all data objects in the ecosystem. Building a practical framework that can service users efficiently requires understanding the motivations and actions of the participants. We explore several tradeoffs between efficiency and the security of data objects in such environments, using ICEMAN – a real-wold implementation of an ICN that operates on MANETs. Since our findings are based on an actual system, they have significant implications for building efficient ICNs that have security designed in at the outset (rather than added later when options may be limited). We empirically establish that there is a strong interplay between the need to have more specific information for efficient routing and the need to ensure trust and confidentiality in such a decentralized system."
+      },
+      {
+        "file": "DEBS2016",
+        "conference": "Proceedings of the 10th ACM International Conference on Distributed and Event-based Systems",
+        "conference_home_url": "http://debs2016.org/",
+        "doi": "10.1145/2933267.2940322",
+        "doi_url": "https://dl.acm.org/citation.cfm?doid=2933267.2940322",
+        "title": "Energy efficient, context-aware cache coding for mobile information-centric networks",
+        "authors": ["Joshua Joy", "Yu-Ting Yu", "Mario Gerla", "Ashish Gehani", "Hasnain Lakhani", "Minyoung Kim"],
+        "abstract": "In a mobile, intermittently connected information-centric network (ICN), users download files either from the original source or from caches assembled during previous downloads. Network coding has helped to increase download robustness and overcome \"missing coupon\" delays. Prior work has also shown that network coding depletes energy resources much faster than no coding. Our contribution here is to make coding more efficient, and to detect when it is not necessary, in order to prolong the life of mobile handhelds. In the network coding context, Cache Coding (i.e., coding performed only on fully cached files) can prevent pollution attacks without significantly reducing diversity and performance with respect to unrestricted code mixing. Cache Coding introduces the first important means to reduce energy consumption by avoiding the extremely processor-intensive homomorphic code used in conventional unrestricted mixing networks. Our second contribution is to detect when Cache Coding is not required and disable it to save precious energy. The proposed Context-Aware Cache Coding (CACC) toggles between using Cache Coding and no coding based on the current network context (e.g., mobility, error rates, file size, etc). Our CACC implementation on Android devices demonstrates that the new scheme improves upon network coding's file delivery rate while keeping energy consumption in check."
+      }
+    ],
     "2015": [
       {
         "file": "ACSAC2015",
         "conference": "2015 Annual Computer Security Applications Conference",
         "conference_home_url": "https://www.acsac.org/2015/",
-        "doi": "TBD",
-        "doi_url": "#",
+        "doi": "10.1145/2818000.2818001",
+        "doi_url": "https://dl.acm.org/citation.cfm?doid=2818000.2818001",
         "title": "Decentralized Authorization and Privacy-Enhanced Routing for Information-Centric Networks",
         "authors": ["Mariana Raykova", "Hasnain Lakhani", "Hasanat Kazmi", "Ashish Gehani"],
         "abstract": "As information-centric networks are deployed in increasingly diverse settings, there is a growing need to protect the privacy of participants. We describe the design, implementation, and evaluation of a security framework that achieves this. It ensures the integrity and confidentiality of published content, the associated descriptive metadata, and the interests of subscribers. Publishers can scope access to the content, as well as which nodes in the network can broker access to it. Subscribers can limit which nodes can see their interests. Scopes are defined as policies over attributes of the individual nodes. The system transparently realizes the policies with suitable cryptographic primitives. It supports deployment in hetero-geneous mobile ad hoc environments where trust may derive from multiple independent sources. Further, no external public key infrastructure is assumed. We also report on the overhead that the security adds in actual deployments on Android devices."
