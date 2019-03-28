@@ -1,54 +1,6 @@
 import sys
 import re
-from functools import partial
 from collections import OrderedDict
-
-def namefilter(forbidden_urls, forbidden_domains, names, extra_names, whitelist, nameset_ignores, placeholders, entry):
-
-    link = entry.get('link')
-    if link is None:
-        return None
-
-    if entry['type'] == 'photo' or entry['type'] == 'status':
-        return None
-
-    names = names + extra_names
-    nameset = set(s for s in ' '.join(names).split(' ') if len(s) > 2) - nameset_ignores
-
-    for url in forbidden_urls:
-        if link.find(url) != -1:
-            return None
-
-    if 'caption' in entry:
-        for domain in forbidden_domains:
-            if entry['caption'].find(domain) != -1:
-                return None
-
-    holder = 0
-
-    message = entry.get('message', '')
-    if message is not None:
-        for name in names:
-            if message.find(name) != -1:
-                #print('Removing name %s' % name)
-                message = message.replace(name, placeholders[holder])
-                holder = holder + 1
-        for name in nameset:
-            if message.find(name) != -1:
-                fp = False
-                for placeholder in placeholders:
-                    if message.find(placeholder) != -1 and placeholder.find(name) != -1:
-                        fp = True
-                st = re.findall("[\w']+|[.,!?;]", message)
-                if name not in st:
-                    fp = True
-                if not fp and entry['id'] not in whitelist:
-                    message = message.replace(name, placeholders[holder])
-                    holder = holder + 1
-                    #print('Removing name substring match %s in %s' % (name, entry['id']))
-        entry['message'] = message
-
-    return entry
 
 routes = {
         'index' : '/',
