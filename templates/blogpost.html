@@ -1,0 +1,50 @@
+{% extends "blogbase.html" %}
+
+{% block css %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="/static/css/prism.css">
+<style type="text/css">
+.token.content,
+.token.number,
+.token.tag {
+  all: inherit;
+  color: #905;
+}
+</style>
+{% endblock css %}
+
+{% block script %}
+{{ super() }}
+<script src="/static/js/prism.js"></script>
+<script type="text/javascript">
+Prism.highlightAll();
+</script>
+{% endblock script %}
+
+{% block content %}
+        <div class="columns">
+            <div class="column is-8">
+                <div class="content is-medium">
+                    <h2 class="subtitle is-4">{{date}}</h2>
+                    <h1 class="title">{{title}}</h1>
+                    <div class="field is-grouped is-grouped-multiline">
+                        {% for tag in tags %}
+                            <div class="control">
+                                <div class="tags">
+                                    <a class="tag is-link" href="{{ url_for(route='tag', tag=tag) }}">{{ tag }}</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="content article-body">
+                        {% if year | int <= 2014 %}
+                        <div class="notification is-danger is-light">
+                            <strong>Warning:</strong> This post is multiple years out of date. The content is left up for reference and keeping links valid, but there is likely better, more up to date content available.
+                        </div>
+                        {% endif %}
+                        {{ content | safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}

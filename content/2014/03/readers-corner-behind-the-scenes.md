@@ -19,7 +19,7 @@ The data dump looked to be quite promising, as it seemed to contain all the need
 
 The next attempt was to use [Facebook's Graph API](https://developers.facebook.com/docs/graph-api/) which is intended for developers. This API comes with a very handy [Graph API Explorer](https://developers.facebook.com/tools/explorer) tool, which lets one run queries for data right there in the browser. With that tool, getting the data out was surprisingly easy, as it was just a few repeated API calls to:
 
-    /$USER_ID/posts?fields=caption,description,message,id,link,name,type,created_time&limit=500
+<pre><code>/$USER_ID/posts?fields=caption,description,message,id,link,name,type,created_time&limit=500</code></pre>
 
 With all that data out and safely saved to a file, the database was almost ready. All that was needed was a small python script to only save posts that had the "link" attribute, and then pretty-print it out to a *links.txt* file.
 
@@ -85,7 +85,8 @@ The solution was all ready to be deployed, except for one *small* problem; the l
 
 The first order of data was to automatically get data from Facebook, programmatically, using the API, and then updating the *links.txt* file with new data. This was fairly straightforward:
 
-<pre class="prettyprint">
+<pre>
+<code class="language-python">
 def load():
     with open('links.txt') as input:
         links = json.load(input)
@@ -117,7 +118,7 @@ def main():
         print('%s new links!' % count)
     else:
         print('No new data!')
-</pre>
+</code></pre>
 
 What is that magical access token, you may ask?
 
@@ -129,17 +130,18 @@ The solution, unfortunately, is to register for a developer account and create a
 
 The basic access token is received by visiting the following url:
 
-    https://www.facebook.com/dialog/oauth?type=user_agent&client_id=APP_ID&redirect_uri=REDIRECT_URI&scope=read_stream,export_stream
+<pre><code>https://www.facebook.com/dialog/oauth?type=user_agent&client_id=APP_ID&redirect_uri=REDIRECT_URI&scope=read_stream,export_stream</code></pre>
 
-<code class="prettyprint">REDIRECT_URI</code> should be a URL you control, the result will be appended as a query string parameter. This token should be copied and fed into the following URL to get a long lived access token:
+<code>REDIRECT_URI</code> should be a URL you control, the result will be appended as a query string parameter. This token should be copied and fed into the following URL to get a long lived access token:
 
-    https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=APP_ID&client_secret=SECRET&fb_exchange_token=TOKEN
+<pre><code>https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=APP_ID&client_secret=SECRET&fb_exchange_token=TOKEN</code></pre>
 
 ## Running a static site generator, again and again
 
 With that update program in place, all that's needed is to call it repeatedly, and then call halwa to generate the new website. This is easily done with a shell script:
 
-<pre class="prettyprint">
+<pre>
+<code class="language-bash">
 #!/bin/bash
 
 FILE=/tmp/update_link_log
@@ -167,7 +169,7 @@ else
     python -m halwa config.py | grep -v "json" >>$FILE 2>&1
     cat $FILE
 fi
-</pre>
+</code></pre>
 
 This script is then run every hour by cron, which emails the output using msmtp to provide a notification whenever there is new data, or whenever an error occurs.
 

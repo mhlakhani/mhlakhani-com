@@ -2,5 +2,5 @@ mhlakhani-com
 =============
 
 This is the source for [http://mhlakhani.com](http://mhlakhani.com).
-Built on top of [https://github.com/mhlakhani/halwa](Halwa).
-Built using HAML, Bootstrap for CSS, google-code-prettify for syntax highlighting (tomorrow night theme), Disqus for comments.
+Built on top of suji, a closed source static site generator.
+Built using Bulma for CSS (with a template from bulma-templates and a separate one for the resume), and prism.js for syntax higlighting.

@@ -1,10 +1,31 @@
-{% macro image(src, caption="hello") %}
-    <div class="thumbnail">
-        <img src="{{ src }}" title="{{ Caption }}"/>
-        <br />
-        <div class="caption alert alert-info">
-            <p>{{ caption }}</p>
+{% macro image(src, caption) %}
+    <div class="card">
+        <div class="card-image">
+            <figure class="image">
+                <img src="{{ src }}" alt="{{ caption }}">
+            </figure>
+        </div>
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <p class="subtitle is-6">{{ caption }}</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="clearfix"></div>
+{% endmacro %}
+
+{% macro post_excerpt_card(post) %}
+<article class="media">
+    <div class="media-content">
+        <div class="content">
+            <p class="title is-size-4"><a href="{{ post.url }}">{{ post.title }}</a></p>
+            <p class="subtitle is-size-6">
+                {{ post.excerpt }}
+                <br />
+                {{ post.date }}
+            </p>
+        </div>
+    </div>
+</article>
 {% endmacro %}

@@ -10,7 +10,8 @@ As promised in the last [post](/blog/2010/12/backups-and-saving-regularly/), her
 
 Let's just jump straight into an overview of the code.
 
-<pre class="prettyprint lang-python">
+<pre>
+<code class="language-python">
 import urllib2
 KEY = 'ENTER_YOUR_API_KEY_HERE'
 TARGET = 'ar'
@@ -23,31 +24,35 @@ def fetch_all_words():
 
 if __name__ == "__main__":
     fetch_all_words()
-</pre>
+</code></pre>
 
-The above is fairly simple, we're just importing the required modules, and defining some variables. The *urllib2* module contains functions to open web URLs (webpages), so we need that.  
+The above is fairly simple, we're just importing the required modules, and defining some variables. The <code>urllib2</code> module contains functions to open web URLs (webpages), so we need that.  
 
-Let's jump ahead to the definition of the fetch\_word function:
+Let's jump ahead to the definition of the <code>fetch_word</code> function:
 
-<pre class="prettyprint lang-python">
+<pre>
+<code class="language-python">
 def fetch_word(word):
     url = 'https://www.googleapis.com/language/translate/v2?key=%s&source=en&target=%s&q=%s' % (KEY, TARGET, word)
     dat = urllib2.urlopen(url).read()
     data = eval(dat)
     trans = data['data']['translations'][0]['translatedText']
     return trans
-</pre>
+</code></pre>
 
 Let's break this down into bite-size parts. First, we generate the URL, which is of the form 
 
-<blockquote>
-    https://www.googleapis.com/language/translate/v2?key=ENTER_API_KEY_HERE&source=SOURCE_LANGUAGE&target=TARGET_LANGUAGE&q=WORD_TO_TRANSLATE 
-</blockquote>
-Once that's done, in line 3, we read all the information at that URL. First we call the *urllib2.urlopen* function, which lets us treat the webpage as a file, and then we call read on it to read everything.
+<pre>
+<code class="language-python">
+https://www.googleapis.com/language/translate/v2?key=ENTER_API_KEY_HERE&source=SOURCE_LANGUAGE&target=TARGET_LANGUAGE&q=WORD_TO_TRANSLATE 
+</code></pre>
+
+Once that's done, in line 3, we read all the information at that URL. First we call the <code>urllib2.urlopen</code> function, which lets us treat the webpage as a file, and then we call read on it to read everything.
 
 Line 4 is where the magic's at. Google's response is of this form (which is actually JSON, as we noted above.):
 
-<pre class="prettyprint">
+<pre>
+<code class="language-python">
 {"data":
   {"translations":
     [
@@ -55,13 +60,14 @@ Line 4 is where the magic's at. Google's response is of this form (which is actu
     ]
   }
 }
-</pre>
+</code></pre>
 
-This might look a bit strange at first sight, but if you know even a bit of Python, it's just like code to make dictionaries and lists. In fact, using the *eval* function in line 4, we run this as full blown Python code and save the result in the data variable. This is where dynamic languages come in handy, this would be very difficult to do in C/C++! Once we have the data, we simply read our word off it and return it, as in lines 5-6. And that's it. You've just gotten your translated word off google!
+This might look a bit strange at first sight, but if you know even a bit of Python, it's just like code to make dictionaries and lists. In fact, using the <code>eval</code> function in line 4, we run this as full blown Python code and save the result in the data variable. This is where dynamic languages come in handy, this would be very difficult to do in C/C++! Once we have the data, we simply read our word off it and return it, as in lines 5-6. And that's it. You've just gotten your translated word off google!
 
-Now, in the *fetch\_all\_words* function, all we do is fetch each word in our file, and save the translations to another file:
+Now, in the <code>fetch_all_words</code> function, all we do is fetch each word in our file, and save the translations to another file:
 
-<pre class="prettyprint">
+<pre>
+<code class="language-python">
 def fetch_all_words():
     count = 0
 
@@ -78,7 +84,7 @@ def fetch_all_words():
             out.flush()
 
     out.close()
-</pre>
+</code></pre>
 
 First, we setup a counter variable. In line 4, we open the words.txt file and split it (as it had one word per line) into a list of words, for easier processing. Then we open the output file, **in append mode**.
 

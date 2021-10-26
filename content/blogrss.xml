@@ -1,0 +1,22 @@
+{
+    "route" : "blogrss",
+    "title": "Hasnain Lakhani's Blog",
+    "link": "https://mhlakhani.com/blog/",
+    "description": "Hasnain Lakhani's Blog"
+}
+
+<rss version="2.0">
+    <channel>
+        <title>{{ title }}</title>
+        <link>{{ link }}</link>
+        <description>{{ description }}</description>
+        {% for post in blogposts_all(count=10) %}
+        <item>
+            <title>{{ post.title }}</title>
+            <link>{{ post.url }}</link>
+            <description>{{ post.excerpt }}</description>
+            <pubDate>{{ post.date }}</pubDate>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

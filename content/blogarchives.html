@@ -1,0 +1,24 @@
+{
+  "route": "blogarchives",
+  "title": "Hasnain Lakhani's Blog"
+}
+
+
+{% extends "blogbase.html" %}
+{% block content %}
+<div class="tile is-parent is-8 is-vertical">
+    {% for time in blog_archives.entries %}
+        <div class="tile is-child">
+            <div class="content">
+                <h2 class="title">{{ time[0] }} {{ time[1] }}</h2>
+            </div>
+        </div>
+        {% for post in time[2] %}
+        <div class="tile is-child box">
+            {{ macros::post_excerpt_card(post=post) }}
+        </div>
+        {% endfor %}
+    {% endfor %}
+    <div class="tile is-child"></div>
+</div>
+{% endblock content %}

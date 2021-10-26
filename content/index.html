@@ -1,0 +1,346 @@
+{
+    "route": "index",
+    "title": "Home",
+    "navbar": 0,
+    "presence": [
+        ["email", "mailto:m.hasnain.lakhani@gmail.com"],
+        ["twitter", "https://twitter.com/mhlakhani"],
+        ["facebook", "https://www.facebook.com/m.hasnain.lakhani"],
+        ["linkedin", "https://www.linkedin.com/in/mhlakhani/"],
+        ["github", "https://github.com/mhlakhani"]
+    ],
+    "projects": [
+        ["Hasnain Reads", "https://reads.mhlakhani.com/"],
+        ["Khel", "https://khel.mhlakhani.com"],
+        ["NewsMap", "https://newsmap.mhlakhani.com/"]
+    ]
+}
+
+{% extends "base.html" %}
+{% block body %}
+<section class="section">
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-child">
+                <aside class="menu is-narrow-mobile is-fullheight">
+                    <h3 class="menu-label">Presence</h3>
+                    <ul class="menu-list">
+                        {% for entry in presence %}
+                        <li><a href="{{ entry[1] }}" target="_blank">{{ entry[0] }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    <h3 class="menu-label">Projects</h3>
+                    <ul class="menu-list">
+                        {% for entry in projects %}
+                        <li><a href="{{ entry[1] }}" target="_blank">{{ entry[0] }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </aside>
+            </div>
+            <div class="tile is-parent is-10 is-vertical" style="padding: 0rem;">
+                <section class="hero">
+                    <div class="hero-body has-background-light">
+                        <h1 class="title is-1">Hello!</h1>
+                        <h2 class="subtitle">You've come to my (Hasnain Lakhani's) deserted corner of the internet</h2>
+                    </div>
+                </section>
+                <section class="section" style="padding-bottom: 1rem; padding-top: 1rem;">
+                    <div class="section-heading">
+                        <h3 class="title is-2">About me</h3>
+                        <h4 class="subtitle">Software Geek. Generalist.</h4>
+                        <div class="container">
+                            <p>I'm an avid geek and a technology and (computer) science enthusiast</p>
+                            <p><strong>Personally, </strong> I spend a lot of time reading (scifi and fantasy are my jam
+                                when it comes to books; otherwise I spend a lot of time reading general articles on the
+                                web), playing video games, and eating more food than is healthy.</p>
+                            <p><strong>Professionally, </strong>I have 8+ years of industry experience as a software
+                                engineer and engineering manager, with interests in distributed systems and software
+                                security. You can learn more about my work via my resume.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section" style="padding-bottom: 1rem; padding-top: 1rem;">
+                    <div class="section-heading">
+                        <h3 class="title is-2">Writing</h3>
+                        <h4 class="subtitle is-5">Stuff I've written</h4>
+                        <div class="content">
+                            <p class="content">I enjoy writing and try to discuss my interests and work where I can.</p>
+                            <ul>
+                                <li>
+                                    <a href="https://amazon.com/dp/B07H1N3MJB" target="_blank">
+                                        I self published a novella titled <i>Unearthly Whispers</i>. At one point in
+                                        time it was in the top 10 on Amazon under "90-Minute Science Fiction & Fantasy
+                                        Short Reads".
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://reads.mhlakhani.com/" target="_blank">
+                                        I read a lot of content on the web and write quick summaries. There's a growing
+                                        collection (5000+) here.
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ url_for(route='blogindex') }}" target="_blank">
+                                        I maintain a (very out of date) blog on this site that I'm trying to get back
+                                        to.
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ url_for(route='publications') }}" target="_blank">
+                                        I have a few published academic papers on computer networks, systems, and
+                                        security.
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="section" style="padding-bottom: 1rem; padding-top: 1rem;">
+                    <div class="section-heading">
+                        <h3 class="title is-2">Talks & Publications</h3>
+                        <h4 class="subtitle is-5">I've given some talks and been interviewed over the years.</h4>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    <a href="https://developers.facebook.com/blog/post/2021/10/12/meet-rustaceans-hasnain-lakhani/"
+                                        target="_blank">
+                                        <strong>October 2021:</strong> I was interviewed for the Facebook Open Source
+                                        Blog, talking about my experiences building production services using Rust.
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/static/pdf/Fuzzing_Adoption_at_Facebook.pdf" target="_blank">
+                                        <strong>December 2019:</strong> I gave a talk about Fuzzing Adoption at Facebook
+                                        at the Bay Area Fuzzing Meetup.
+                                    </a>
+                                </li>
+                            </ul>
+                            <p class="content">The talks below do not have the content available and are left for
+                                reference.</p>
+                            <ul class="content">
+                                <li>
+                                    <a href="https://devcpakistanconference2019.splashthat.com/" target="_blank">
+                                        <strong>April 2019:</strong> I gave a talk at a Facebook Developer summit in
+                                        Lahore on writing secure applications.
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://research.fb.com/blog/2018/09/fellowship-and-emerging-scholar-summit-2018/"
+                                        target="_blank">
+                                        <strong>September 2018:</strong> I gave a talk on Invariant Detector at the
+                                        Facebook fellowship and emerging scholar summit.
+                                    </a>
+                                </li>
+                                <li>
+                                    <strong>May 2017:</strong> I gave a talk at the SurveyMonkey security friends
+                                    series, talking about my work on <a
+                                        href="https://research.fb.com/publications/ivd-automatic-learning-and-enforcement-of-authorization-rules-in-online-social-networks/"
+                                        target="_blank">Invariant Detector</a> at Facebook.
+                                </li>
+                                <li>
+                                    <strong>November 2016:</strong> I gave a talk for the Pakistani developer community
+                                    on building messenger bots.
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/events/540241142809772/" target="_blank">
+                                        <strong>December 2015:</strong> I gave a talk on stream processing at scale to
+                                        an audience of students and engineers in Karachi and then in Lahore.
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="section" style="padding-bottom: 1rem; padding-top: 1rem;">
+                    <div class="section-heading">
+                        <h3 class="title is-2">Projects</h3>
+                        <h4 class="subtitle is-5">I have a lot of (somewhat half baked) projects.</h4>
+                    </div>
+                    <br />
+                    <div class="container portfolio-container">
+                        <div class="columns">
+                            <div class="column is-4">
+                                <div class="card" style="margin-bottom: 2em;">
+                                    <header class="card-header">
+                                        <p class="card-header-title">
+                                            <span class="content">Hasnain Reads</span>
+                                        </p>
+                                    </header>
+                                    <div class="card-content">
+                                        <p class="content">
+                                            I built a small web-app which communicates with Facebook to pull content I
+                                            post, and display it on a web interface.
+                                            This is paired with a messenger chat-bot to make it easy for me to publish
+                                            content and update my reading list.
+                                        </p>
+                                        <div class="content">
+                                            <p>Built with:
+                                                <span class="tag is-default">Rust</span>
+                                                <span class="tag is-default">Rocket</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <footer class="card-footer">
+                                        <a href="https://reads.mhlakhani.com" target="_blank"
+                                            class="card-footer-item">View</a>
+                                    </footer>
+                                </div>
+                                <div class="card" style="margin-bottom: 2em;">
+                                    <header class="card-header">
+                                        <p class="card-header-title">
+                                            <span>halwa <strong>(Old)</strong></span>
+                                        </p>
+                                    </header>
+                                    <div class="card-content">
+                                        <p class="content">
+                                            I wrote a static site generator in Python which powered an older version of
+                                            this site.
+                                        </p>
+                                        <div class="content">
+                                            <p>Built with:
+                                                <span class="tag is-default">Python</span>
+                                                <span class="tag is-default">jinja2</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <footer class="card-footer">
+                                        <a href="https://github.com/mhlakhani/halwa" target="_blank"
+                                            class="card-footer-item">Code</a>
+                                    </footer>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="card" style="margin-bottom: 2em;">
+                                    <header class="card-header">
+                                        <p class="card-header-title">
+                                            <span class="content">Khel</span>
+                                        </p>
+                                    </header>
+                                    <div class="card-content">
+                                        <p class="content">
+                                            I built an online turn-based multiplayer game engine in pure Rust (for both
+                                            the client and server) and implemented a couple of
+                                            games I like to play on it.
+                                        </p>
+                                        <div class="content">
+                                            <p>Built with:
+                                                <span class="tag is-default">Rust</span>
+                                                <span class="tag is-default">actix-web</span>
+                                                <span class="tag is-default">yew</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <footer class="card-footer">
+                                        <a href="https://khel.mhlakhani.com" target="_blank"
+                                            class="card-footer-item">View</a>
+                                    </footer>
+                                </div>
+                                <div class="card" style="margin-bottom: 2em;">
+                                    <header class="card-header">
+                                        <p class="card-header-title">
+                                            <span class="content">ENCODERS</span>
+                                        </p>
+                                    </header>
+                                    <div class="card-content">
+                                        <p class="content">
+                                            While at SRI, I worked on ENCODERS, adding access control support and
+                                            observability.
+                                        </p>
+                                    </div>
+                                    <footer class="card-footer">
+                                        <a href="https://github.com/SRI-CSL/ENCODERS" target="_blank"
+                                            class="card-footer-item">Code</a>
+                                        <a href="{{ url_for(route='publications') }}" target="_blank"
+                                            class="card-footer-item">Papers</a>
+                                    </footer>
+                                </div>
+                                <div class="card" style="margin-bottom: 2em;">
+                                    <header class="card-header">
+                                        <p class="card-header-title">
+                                            <span>hlisp <strong>(Old)</strong></span>
+                                        </p>
+                                    </header>
+                                    <div class="card-content">
+                                        <p class="content">
+                                            I wrote a lisp implementation in Haskell
+                                        </p>
+                                        <div class="content">
+                                            <p>Built with:
+                                                <span class="tag is-default">Haskell</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <footer class="card-footer">
+                                        <a href="https://github.com/mhlakhani/hlisp" target="_blank"
+                                            class="card-footer-item">Code</a>
+                                    </footer>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="card" style="margin-bottom: 2em;">
+                                    <header class="card-header">
+                                        <p class="card-header-title">
+                                            <span>NewsMap <strong>(Old)</strong></span>
+                                        </p>
+                                    </header>
+                                    <div class="card-content">
+                                        <p class="content">
+                                            I wrote a client-side JS app back in 2012 which showed news sources from all
+                                            across the world.
+                                        </p>
+                                        <div class="content">
+                                            <p>Built with:
+                                                <span class="tag is-default">Javascript</span>
+                                                <span class="tag is-default">jVectorMap</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <footer class="card-footer">
+                                        <a href="https://newsmap.mhlakhani.com/" target="_blank"
+                                            class="card-footer-item">View</a>
+                                    </footer>
+                                </div>
+                                <div class="card" style="margin-bottom: 2em;">
+                                    <header class="card-header">
+                                        <p class="card-header-title">
+                                            <span>Blocky <strong>(Old)</strong></span>
+                                        </p>
+                                    </header>
+                                    <div class="card-content">
+                                        <p class="content">
+                                            I wrote a C++ library for random linear network coding which was much faster
+                                            than the implementation used in ENCODERS.
+                                        </p>
+                                        <div class="content">
+                                            <p>Built with:
+                                                <span class="tag is-default">C++</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <footer class="card-footer">
+                                        <a href="https://github.com/mhlakhani/blocky" target="_blank"
+                                            class="card-footer-item">Code</a>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section" style="padding-bottom: 1rem; padding-top: 1rem;">
+                    <div class="section-heading">
+                        <h3 class="title is-2">Resume</h3>
+                        <h4 class="subtitle is-5">More about my professional experience.</h4>
+                        <div class="notification is-danger is-light">
+                            I'm not looking to switch jobs in the near term, but I'd love to know if you have exciting
+                            opportunities working on distributed systems or security, especially if it involves Rust.
+                            Please mention "cookies" if you reach out for an opportunity so I know it's not a mass
+                            reachout.
+                        </div>
+                        <a href="{{ url_for(route='resume') }}" class="button is-link is-medium">View My Resume</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}

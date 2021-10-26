@@ -1,0 +1,34 @@
+{
+  "routes": {
+    "index" : "/",
+    "publications" : "/publications/",
+    "blogindex" : "/blog/",
+    "blogarchives" : "/blog/archives/",
+    "blogrss" : "/blog/rss.xml",
+    "post" : "/blog/{year}/{month}/{slug}/",
+    "tag" : "/blog/tag/{tag}/",
+    "sitemap" : "/sitemap.xml",
+    "resume" : "/resume/"
+  },
+  "blogpost_template": "blogpost.html",
+  "source_dir": ".",
+  "output_dir": "output",
+  "sitename": "mhlakhani's website",
+  "sources": {
+    "static/css/*.css": "StaticContent",
+    "static/js/*.js": "StaticContent",
+    "static/pdf/*.pdf": "StaticContent",
+    "static/img/**/*.png": "StaticContent",
+    "static/img/**/*.jpg": "StaticContent",
+    "templates/*.html": "Template",
+    "content/publications.html": "DynamicContentSinglePage",
+    "content/index.html": "DynamicContentSinglePage",
+    "content/blogindex.html": "DynamicContentSinglePage",
+    "content/resume.html": "DynamicContentSinglePage",
+    "content/**/*.md": "DynamicContentBlogPost",
+    "content/blogtag.html": "DynamicContentBlogpostTagPage",
+    "content/blogarchives.html": "DynamicContentBlogpostArchivePage",
+    "content/blogrss.xml": "DynamicContentBlogpostRssPage",
+    "content/sitemap.xml": "DynamicContentSitemap"
+  }
+}

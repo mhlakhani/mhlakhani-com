@@ -1,0 +1,22 @@
+{
+  "route": "tag",
+  "title": "Hasnain Lakhani's Blog"
+}
+
+
+{% extends "blogbase.html" %}
+{% block content %}
+<div class="tile is-parent is-8 is-vertical">
+    <div class="tile is-child">
+        <div class="content">
+            <h2 class="title">Posts tagged {{ tag }}</h2>
+        </div>
+    </div>
+    {% for post in blogposts_tagged(tag=tag, count=100) %}
+        <div class="tile is-child box">
+            {{ macros::post_excerpt_card(post=post) }}
+        </div>
+    {% endfor %}
+    <div class="tile is-child"></div>
+</div>
+{% endblock content %}

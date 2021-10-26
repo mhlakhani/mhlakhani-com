@@ -3,16 +3,17 @@
     "title": "Classes, Introspection, and the Power of Dynamic Languages",
     "date": "2011/01/25",
     "tags": ["python"],
-    "excerpt": "This is the third post in the Bulk Tag Generation in Python series."
+    "excerpt": "Dynamically modifying objects in Python."
 }
 
 Note: This is the third post in the [Bulk Tag Generation in Python](/blog/2011/01/bulk-tag-generation-in-python/) series.
 
 Last time we went over how to open and read an Excel file. This time we'll actually use that to read in the data file which had all the information we needed to make tags. Here's a sample of the data:
 
-<pre class="prettyprint">Team ID  Delegate ID  Delegate Name   Delegate Email  Delegate Phone  Gender  Age Delegate Level  Accommodation Request   Accommodation Status    Head Delegate  
+<pre>
+<code class="language-python">Team ID  Delegate ID  Delegate Name   Delegate Email  Delegate Phone  Gender  Age Delegate Level  Accommodation Request   Accommodation Status    Head Delegate  
 PSI-S-0001  PSI-D-0001  Hasnain Lakhani some-email-address@gmail.com  123456789  Male 19  University  No   Yes
-</pre>
+</code></pre>
 
 Someone coming from a C++ background might have chosen to start by making a class and having variables such as team id, delegate id, and so on. But that's a lot of boilerplate code to write just to get started.
 
@@ -22,7 +23,8 @@ Someone coming from a C++ background might have chosen to start by making a clas
 
 Let's see how we can do it in Python.
 
-<pre class="prettyprint linenums"># This is at the top of the file
+<pre>
+<code class="language-python"># This is at the top of the file
 DELEGATE_FIELDS = "Team ID|Delegate ID|Delegate Name|Delegate Email|Delegate Phone|Gender|Age|Delegate Level|Accommodation Request|Accommodation Status|Head Delegate"
 
 # This is the class we're making
@@ -36,19 +38,19 @@ class Thing:
 
 # And this is how we get all the data
 things = [Thing(sheet, x, DELEGATE_FIELDS) for x in xrange(1, maxno)]
-</pre>
+</code></pre>
 
 Let's work through this step by step.
 
-First, we have the <code class="prettyprint">DELEGATE_FIELDS</code> constant, which is basically one long string (copied off the excel file) containing the column names.
+First, we have the <code>DELEGATE_FIELDS</code> constant, which is basically one long string (copied off the excel file) containing the column names.
 
-Then, we create a class (You can see how good I am at picking names) and define its constructor, the <code class="prettyprint">__init__</code> method. The arguments are simple, sheet is an xlrd worksheet, line is the line number, and fields is the format specifier, which is <code class="prettyprint">DELEGATE_FIELDS</code> here.
+Then, we create a class (You can see how good I am at picking names) and define its constructor, the <code>\_\_init\_\_</code> method. The arguments are simple, sheet is an xlrd worksheet, line is the line number, and fields is the format specifier, which is <code>DELEGATE_FIELDS</code> here.
 
-Starting off, we turn the fields parameter into a list using a list comprehension; at the same time making the names more code-friendly, e.g. "Team ID" gets converted to <code class="prettyprint">team_id</code>.
+Starting off, we turn the fields parameter into a list using a list comprehension; at the same time making the names more code-friendly, e.g. "Team ID" gets converted to *team_id*.
 
-Now we enumerate over all the fields. Enumerate is a nice little function, returning both the index and value so we can use them neatly, instead of <code class="prettyprint">for x in xrange(0, len(fields)):</code>. So now we have the column number and the field name.
+Now we enumerate over all the fields. Enumerate is a nice little function, returning both the index and value so we can use them neatly, instead of <code class="language-python">for x in xrange(0, len(fields)):</code>. So now we have the column number and the field name.
 
-Line 11 has the real magic: We first fetch the value that we need from the excel file. Then, we're saving it in the <code class="prettyprint">__dict__</code> dictionary, in the field field. So far, so good. But, <code class="prettyprint">__dict__</code> is special. Internally, all a class' variables are stored inside its <code class="prettyprint">__dict__</code>. So when we update that, we're basically adding a new variable into the class, at runtime. Bingo. So, once this code runs with the above data, we can do <code class="prettyprint">my_variable.team_id</code> and it'll give the team ID.
+Line 11 has the real magic: We first fetch the value that we need from the excel file. Then, we're saving it in the <code>\_\_dict\_\_</code> dictionary, in the field field. So far, so good. But, <code>\_\_init\_\_</code> is special. Internally, all a class' variables are stored inside its <code>\_\_init\_\_</code>. So when we update that, we're basically adding a new variable into the class, at runtime. Bingo. So, once this code runs with the above data, we can do <code>my_variable.team_id</code> and it'll give the team ID.
 
 The last line just runs a list comprehension to get all the rows of the Excel file into a list, for later processing.
 

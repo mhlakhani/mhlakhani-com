@@ -1,0 +1,24 @@
+<nav class="navbar is-white has-shadow">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item brand-text" href="/">
+                <h3 class="subtitle is-3 is-spaced">{{ sitename }}</h3>
+            </a>
+            <a role="button" class="navbar-burger burger" data-target="navMenu">
+                <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navMenu" class="navbar-menu">
+            <div class="navbar-start"></div>
+            <div class="navbar-end">
+            {% for entry in navbar.entries %}
+              <a 
+                class="navbar-item {% if entry.active %} is-active {% else %} {% endif %} " 
+                href="{{ entry.url }}">
+                  {{ entry.title }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+    </div>
+</nav>

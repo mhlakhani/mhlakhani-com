@@ -7,8 +7,6 @@
     "featured": true
 }
 
-{% from "macros.html" import image %}
-
 (Warning: long rant ahead)
 
 Some of you may have noticed the ads now showing on the sidebar (or not, if you're using AdBlock, which I highly recommend). Having heard a lot about Google AdSense and the money people rake in from ads, I wanted to give it a spin and try it out. Given that this is a personal blog and ads look cheap, they may not last long.
@@ -21,11 +19,11 @@ That was one of the first ads shown on my blog, right after setting them up (unf
 
 Sounds perfect! I quickly searched for documentation, finding some good screenshots at this [site](http://www.ditii.com/2010/10/04/adsense-general-category-blocking-beta-test-begins/).
 
-{{ image("/static/img/2011/01/adsensefail1.jpg", "Category Filtering Options") }}
+{{ macros::image(src='/static/img/2011/01/adsensefail1.jpg', caption='Category Filtering Options') }}
 
 So, I login to my own adsense account, and here's what I see:
 
-{{ image("/static/img/2011/01/adsensefail2.jpg", "Options are Hidden") }}
+{{ macros::image(src='/static/img/2011/01/adsensefail2.jpg', caption='Options are Hidden') }}
 
 The option simply isn't available. Tough luck. It seems like there's no chance at all for folks like me. Some more digging around lead me to the following post, from the [Google Adsense Blog](http://adsense.blogspot.com/2011/01/sensitive-category-blocking-now.html):
 

@@ -7,15 +7,13 @@
     "featured": true
 }
 
-{% from "macros.html" import image %}
-
 If you follow the technology scene a fair bit, you might have heard of [AWS (Amazon Web Services)](http://aws.amazon.com/). If not, all you need to know is that it allows you to build powerful applications for use on the web. It could be likened to renting computers by the hour, in a sense (for the EC2 service). Being the geek that I am, I decided to give their free tier a spin a while back; and see for myself what all the hype was about. The [free usage tier](http://aws.amazon.com/free/) is great for learning the ropes, and, well, it's free. I fired up a few instances in the first few days, ran some basic code, tried it all out. So far, so good. Seamless experience, it seemed to live up to the hype.
 
 ### Update: The EC2 free tier now includes [1GB free Regional data transfer](http://aws.amazon.com/ec2/pricing/), so this post is mostly just here for reference.
 
 And then a few days later, I saw the bill. I'd taken full care not to do anything outside the free usage limits, but it seems a charge had snuck by. Some sort of "Regional data transfer" charge.  
 
-{{ image("/static/img/2011/01/bill1.jpg", "Exhibit A") }}
+{{ macros::image(src='/static/img/2011/01/bill1.jpg', caption='Exhibit A') }}
 
 They had the audacity to charge me **a whole cent!** So, what IS Regional data transfer? From the Amazon EC2 pricing page:
 
@@ -36,8 +34,8 @@ Let's see. I installed mysql-server, adding another 23MB to the download usage. 
 > AmazonEC2   InterZone-Out   DataTransfer-Regional-Bytes 1/4/2011 14:00  1/4/2011 15:00  267511  
 > AmazonEC2   InterZone-In    DataTransfer-Regional-Bytes 1/4/2011 14:00  1/4/2011 15:00  23816600
 
-{{ image("/static/img/2011/01/apt1.jpg", "The terminal session") }}
-{{ image("/static/img/2011/01/bill2.jpg", "Exhibit B") }}
+{{ macros::image(src='/static/img/2011/01/apt1.jpg', caption='The terminal session') }}
+{{ macros::image(src='/static/img/2011/01/bill2.jpg', caption='Exhibit B') }}
 
 The item to note is the address of the update server, http://us-east-1.ec2.archive.ubuntu.com . Checking the repository sources, it seems AMIs have this automatically set as the default. Something about it makes me think it's in the US East region, which is where my instance was located as well. So, let's investigate.
 
@@ -48,7 +46,7 @@ And they sure did:
 > AmazonEC2   InterZone-Out   DataTransfer-Regional-Bytes 1/4/2011 16:00  1/4/2011 17:00  244771  
 > AmazonEC2   InterZone-In    DataTransfer-Regional-Bytes 1/4/2011 16:00  1/4/2011 17:00  23878908
 
-{{ image("/static/img/2011/01/bill3.jpg", "Exhibit C") }}
+{{ macros::image(src='/static/img/2011/01/bill3.jpg', caption='Exhibit C') }}
 
 But that's only a temporary stop gap. It's not the proper way of doing things &#0153;. Let's try to find a work-around.
 
@@ -56,7 +54,7 @@ Then I noticed, even with all this bandwidth usage, the bill still stuck firm at
 
 Now for the fun part: You might've noted that 1 cent is certainly such a small amount. Wouldn't it cost Amazon more in credit card fees? Why should they bother charging such a small amount? Well, it seems Amazon had the same idea. Looking at the statement for the last month again, I found this gem:
 
-{{ image("/static/img/2011/01/bill4.jpg", "Exhibit D") }}
+{{ macros::image(src='/static/img/2011/01/bill4.jpg', caption='Exhibit D') }}
 
 In short, if you were wondering and worrying about the small charge showing up on your 'free' trial of AWS services, you needn't worry anymore.
 
