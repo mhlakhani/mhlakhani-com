@@ -3,7 +3,7 @@
     "title": "Getting Charm running on Android",
     "date": "2012/05/08",
     "tags": ["python", "charm", "android"],
-    "excerpt": "This is a guide to getting the Charm crypto library working on Android.",
+    "excerpt": "Guide to getting the Charm crypto library working on Android.",
     "featured": true
 }
 

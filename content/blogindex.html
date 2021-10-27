@@ -12,7 +12,7 @@
             <h2 class="title">Recent posts</h2>
         </div>
     </div>
-    {% for post in blogposts_recent(count=5) %}
+    {% for post in blogposts_featured(count=5) %}
         <div class="tile is-child box">
             {{ macros::post_excerpt_card(post=post) }}
         </div>
@@ -24,12 +24,10 @@
             <h2 class="title">Featured posts</h2>
         </div>
     </div>
-    {% for post in blogposts_featured(count=5) %}
+    {% for post in blogposts_recent(count=5) %}
         <div class="tile is-child box">
             {{ macros::post_excerpt_card(post=post) }}
         </div>
     {% endfor %}
-    <div class="tile is-child"></div>
-    <div class="tile is-child"></div>
 </div>
 {% endblock content %}
