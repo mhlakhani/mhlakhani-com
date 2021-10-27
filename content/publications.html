@@ -100,71 +100,65 @@
 {% extends "base.html" %}
 {% block body %}
 <section class="section">
-    <div class="container">
-      <div class="columns" style="padding-bottom: 1rem;">
-        <div class="column is-8">
-            <article class="media">
-              I spent some time in the academic world, working on research related to computer networks and security.
-              <br />
-              This page contains a list of all my published academic works.
-            </article>
-        </div>
-      </div>
-      {% for entry in entries %}
-        <div class="columns" style="padding-bottom: 1rem;">
-          <div class="column is-8">
-              <article class="media">
-                Papers from {{ entry.year }}:
-              </article>
-          </div>
-        </div>
-        {% for item in entry.papers %}
-        <div class="columns" style="padding-bottom: 1rem;">
-          <div class="column is-8 box">
-            <div class="columns">
-              <div class="column box has-background-light">
-                <div class="columns">
-                  <article class="column" id="{{ item.file }}">
-                    <p class="title is-size-4">{{ item.title }}</p>
-                    <p class="subtitle is-size-6">
-                      {% for author in item.authors %}
-                        {% if author != "Hasnain Lakhani" %}
-                          {{ author }}{% if not loop.last %},{% endif %}
-                        {% else %}
-                          <strong>{{ author }}</strong>{% if not loop.last %},{% endif %}
-                        {% endif %}
-                      {% endfor %}
+  <div class="container">
+      <div class="tile is-ancestor">
+          <div class="tile is-parent is-8 is-vertical">
+              <div class="tile is-child">
+                  <article class="media">
+                      I spent some time in the academic world, working on research related to computer networks and
+                      security.
                       <br />
-                      {% if item.note %}
-                      <strong>{{ item.note }}</strong>
-                      <br />
-                      {% endif %}
-                      <a href="{{ item.conference_home_url }}" target="_blank">{{ item.conference }}</a>
-                      <br />
-                      <strong>DOI:</strong>
-                      <a href="{{ item.doi_url }}" target="_blank">{{ item.doi }}</a>
-                      <br />
-                      <a href="/static/pdf/{{ item.file }}.pdf" target="_blank">View the full text version here.</a>
-                    </p>
+                      This page contains a list of all my published academic works.
                   </article>
-                </div>
               </div>
-            </div>
-            <div class="columns">
-              <div class="column">
-                <article class="media">
-                  <div class="media-content">
-                    <strong>Abstract: </strong>
-                    <br />
-                    <p>{{ item.abstract }}</p>
+              {% for entry in entries %}
+              <div class="tile is-child">
+                  <div class="content">
+                      <h3 class="subtitle">Papers from {{ entry.year }}</h3>
                   </div>
-                </article>
               </div>
-            </div>
+              {% for item in entry.papers %}
+              <div class="tile is-parent is-vertical box" style="padding: 0rem;">
+                  <div class="tile is-child box has-background-light">
+                      <article class="column" id="{{ item.file }}">
+                          <p class="title is-size-4">{{ item.title }}</p>
+                          <p class="subtitle is-size-6">
+                              {% for author in item.authors %}
+                              {% if author != "Hasnain Lakhani" %}
+                              {{ author }}{% if not loop.last %},{% endif %}
+                              {% else %}
+                              <strong>{{ author }}</strong>{% if not loop.last %},{% endif %}
+                              {% endif %}
+                              {% endfor %}
+                              <br />
+                              {% if item.note %}
+                              <strong>{{ item.note }}</strong>
+                              <br />
+                              {% endif %}
+                              <a href="{{ item.conference_home_url }}" target="_blank">{{ item.conference }}</a>
+                              <br />
+                              <strong>DOI:</strong>
+                              <a href="{{ item.doi_url }}" target="_blank">{{ item.doi }}</a>
+                              <br />
+                              <a href="/static/pdf/{{ item.file }}.pdf" target="_blank">View the full text version
+                                  here.</a>
+                          </p>
+                      </article>
+                  </div>
+                  <div class="tile is-child" style="padding: 1rem; padding-top: 0rem;">
+                      <article class="media">
+                          <div class="media-content">
+                              <strong>Abstract: </strong>
+                              <br />
+                              <p>{{ item.abstract }}</p>
+                          </div>
+                      </article>
+                  </div>
+              </div>
+              {% endfor %}
+              {% endfor %}
           </div>
-        </div>
-        {% endfor %}
-      {% endfor %}
-    </div>
+      </div>
+  </div>
 </section>
 {% endblock body %}
