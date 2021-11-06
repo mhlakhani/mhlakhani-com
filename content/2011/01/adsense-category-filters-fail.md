@@ -3,8 +3,7 @@
     "title": "AdSense Category Filters Fail",
     "date": "2011/01/30",
     "tags": ["adsense", "ramblings"],
-    "excerpt": "AdSense Category filters are pretty useless. Let's see why.",
-    "featured": true
+    "excerpt": "AdSense Category filters are pretty useless. Let's see why."
 }
 
 (Warning: long rant ahead)
