@@ -30,5 +30,6 @@
     "content/blogarchives.html": "DynamicContentBlogpostArchivePage",
     "content/blogrss.xml": "DynamicContentBlogpostRssPage",
     "content/sitemap.xml": "DynamicContentSitemap"
-  }
+  },
+  "site_url": "https://mhlakhani.com"
 }
