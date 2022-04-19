@@ -20,6 +20,7 @@
     "static/pdf/*.pdf": "StaticContent",
     "static/img/**/*.png": "StaticContent",
     "static/img/**/*.jpg": "StaticContent",
+    "static/img/**/*.jpeg": "StaticContent",
     "templates/*.html": "Template",
     "content/publications.html": "DynamicContentSinglePage",
     "content/index.html": "DynamicContentSinglePage",
