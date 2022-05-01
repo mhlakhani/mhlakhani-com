@@ -74,4 +74,4 @@ Some approaches that are common in people that do this well:
 * Proactively tracking down, understanding, and resolving blockers
 * Building great relationships with other teams
 
-How does one become an effective tech lead? That is covered in the next post, coming soon!
+How does one become an effective tech lead? That is covered in [the next post](/blog/2022/04/7-habits-of-highly-effective-tech-leads/)
