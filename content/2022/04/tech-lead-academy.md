@@ -14,6 +14,6 @@ Since the course was fairly long (a full day), I've split up the content into th
 
 * [Impact through Influence](/blog/2022/04/impact-through-influence/)
 * [7 habits of highly effective tech leads](/blog/2022/04/7-habits-of-highly-effective-tech-leads/)
-* Project management & tech leads (post to come soon)
+* [Project management for tech leads](/blog/2022/05/project-management-for-tech-leads/)
 
 Each post is mostly a lightly edited version of my raw notes - I've held back on adding in my own thoughts/commentary, so this can be a more accurate representation of the course material. There will hopefully be a follow up series at some point covering my own experience here.
