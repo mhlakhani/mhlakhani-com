@@ -2,7 +2,7 @@
     "route": "post",
     "title": "Pakistan Trip Report (Lahore Lahore aye!)",
     "date": "2019/05/05",
-    "tags": ["facebook", "developer circles", "work"],
+    "tags": ["facebook", "developer-circles", "work"],
     "excerpt": "Thoughts on the Pakistani developer and startup ecosystem.",
     "featured": true
 }
