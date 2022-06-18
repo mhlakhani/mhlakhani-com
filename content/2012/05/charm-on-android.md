@@ -3,8 +3,7 @@
     "title": "Getting Charm running on Android",
     "date": "2012/05/08",
     "tags": ["python", "charm", "android"],
-    "excerpt": "Guide to getting the Charm crypto library working on Android.",
-    "featured": true
+    "excerpt": "Guide to getting the Charm crypto library working on Android."
 }
 
 These are notes for getting the [Charm library](http://charm-crypto.com/Main.html) working on an Android device. 

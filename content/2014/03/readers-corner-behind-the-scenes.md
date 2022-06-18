@@ -3,8 +3,7 @@
     "title": "Reader's Corner: Behind the Scenes",
     "date": "2014/03/07",
     "tags": ["python", "halwa", "facebook"],
-    "excerpt": "How to get all the posts out of a Facebook account and on to a blog.",
-    "featured": true
+    "excerpt": "How to get all the posts out of a Facebook account and on to a blog."
 }
 
 # Before we begin

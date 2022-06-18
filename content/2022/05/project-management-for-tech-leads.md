@@ -3,8 +3,7 @@
     "title": "Project management for tech leads",
     "date": "2022/05/15",
     "tags": ["work", "career", "facebook", "tech-lead-academy"],
-    "excerpt": "On managing projects for success",
-    "featured": true
+    "excerpt": "On managing projects for success"
 }
 
 > NOTE: This is part of the [tech lead academy](/blog/2022/04/tech-lead-academy/) series. This post contains mostly raw notes from the course I took from Kent Beck.

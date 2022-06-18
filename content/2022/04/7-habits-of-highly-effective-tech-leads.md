@@ -3,8 +3,7 @@
     "title": "7 habits of highly effective (tech) leads",
     "date": "2022/04/30",
     "tags": ["work", "career", "facebook", "tech-lead-academy"],
-    "excerpt": "On being effective as a lead, whether in tech or not",
-    "featured": true
+    "excerpt": "On being effective as a lead, whether in tech or not"
 }
 
 > NOTE: This is part of the [tech lead academy](/blog/2022/04/tech-lead-academy/) series. This post contains mostly raw notes from the course I took from Kent Beck.

@@ -3,8 +3,7 @@
     "title": "Hidden Charges when using Amazon AWS' Free Tier",
     "date": "2011/01/05",
     "tags": ["AWS", "ramblings"],
-    "excerpt": "Amazon charged me 1 cent. Let's find out why",
-    "featured": true
+    "excerpt": "Amazon charged me 1 cent. Let's find out why"
 }
 
 If you follow the technology scene a fair bit, you might have heard of [AWS (Amazon Web Services)](http://aws.amazon.com/). If not, all you need to know is that it allows you to build powerful applications for use on the web. It could be likened to renting computers by the hour, in a sense (for the EC2 service). Being the geek that I am, I decided to give their free tier a spin a while back; and see for myself what all the hype was about. The [free usage tier](http://aws.amazon.com/free/) is great for learning the ropes, and, well, it's free. I fired up a few instances in the first few days, ran some basic code, tried it all out. So far, so good. Seamless experience, it seemed to live up to the hype.
