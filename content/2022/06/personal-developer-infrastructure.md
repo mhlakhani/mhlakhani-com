@@ -1,7 +1,7 @@
 {
     "route": "post",
     "title": "Setting up secure personal developer infrastructure for/and side projects using tailscale, drone, gitea, and nginx",
-    "date": "2022/06/18",
+    "date": "2022/06/20",
     "tags": ["tailscale", "gitea", "drone", "nginx", "ci", "side-projects", "infrastructure"],
     "excerpt": "Learn how I manage my side project infrastructure, which also powers this blog!",
     "featured": true
