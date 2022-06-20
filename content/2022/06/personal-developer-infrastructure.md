@@ -239,8 +239,8 @@ You can, actually! The long way around is to have the app directly talk to `tail
 
 For a `Rocket` app like my reads site, this was fairly easy to add to my `AdminUser` guard:
 
-<pre class="language-rust">
-<code class="language-rust">
+<pre class="language-rust" style="margin-inline-end: -10em">
+<code class="language-rust" style="margin-inline-end: -10em">
 // Lastly, try webauth
 // Do we have a header that matches?
 return match request.headers().get_one("X-Webauth-Email") {
