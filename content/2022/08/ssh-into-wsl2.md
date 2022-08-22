@@ -125,6 +125,6 @@ if [ -z "$RUNNING" ]; then
 fi
 ```
 
-To further aid working remotely and connecting, I eventually plan to set up a low powered raspberry pi node running tailscale, and using tailscale to wake my PC over LAN if needed. I'm eagerly following [https://github.com/tailscale/tailscale/issues/306](this github issue) for that support. I tried invoking the `peerapi` directly using the code [in this PR](https://github.com/tailscale/tailscale/pull/4536) but unfortunately the only other tailscale device I have right now is my iphone and that didn't seem to work. Setting it up on a pi is left as an exercise for the future.
+To further aid working remotely and connecting, I eventually plan to set up a low powered raspberry pi node running tailscale, and using tailscale to wake my PC over LAN if needed. I'm eagerly following [this github issue](https://github.com/tailscale/tailscale/issues/306) for that support. I tried invoking the `peerapi` directly using the code [in this PR](https://github.com/tailscale/tailscale/pull/4536) but unfortunately the only other tailscale device I have right now is my iphone and that didn't seem to work. Setting it up on a pi is left as an exercise for the future.
 
 Ah well. At least this still saved me a few hundred bucks on a laptop!
