@@ -7,6 +7,7 @@
     "blogrss" : "/blog/rss.xml",
     "post" : "/blog/{year}/{month}/{slug}/",
     "tag" : "/blog/tag/{tag}/",
+    "tags" : "/blog/tags/",
     "sitemap" : "/sitemap.xml",
     "resume" : "/resume/"
   },
@@ -26,6 +27,7 @@
     "content/index.html": "DynamicContentSinglePage",
     "content/blogindex.html": "DynamicContentSinglePage",
     "content/resume.html": "DynamicContentSinglePage",
+    "content/blogtags.html": "DynamicContentSinglePage",
     "content/**/*.md": "DynamicContentBlogPost",
     "content/blogtag.html": "DynamicContentBlogpostTagPage",
     "content/blogarchives.html": "DynamicContentBlogpostArchivePage",

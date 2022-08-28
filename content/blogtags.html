@@ -1,0 +1,26 @@
+{
+    "route": "tags",
+    "title": "Hasnain Lakhani's Blog"
+}
+
+
+{% extends "blogbase.html" %}
+{% block content %}
+<div class="tile is-parent is-8 is-vertical">
+    <div class="tile is-child">
+        <div class="content">
+            <h2 class="title">Posts by tag</h2>
+        </div>
+        <div class="field is-grouped is-grouped-multiline">
+            {% for entry in blog_tags_and_counts.entries %}
+            <div class="control">
+            <div class="tags has-addons">
+                <span class="tag"><a href="{{ url_for(route='tag', tag=entry[0]) }}">{{ entry[0] }}</a></span>
+                <span class="tag is-info">{{ entry[1] }}</span>
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
