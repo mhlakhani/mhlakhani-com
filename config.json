@@ -6,8 +6,8 @@
     "blogarchives" : "/blog/archives/",
     "blogrss" : "/blog/rss.xml",
     "post" : "/blog/{year}/{month}/{slug}/",
-    "tag" : "/blog/tag/{tag}/",
-    "tags" : "/blog/tags/",
+    "blogtag" : "/blog/tag/{tag}/",
+    "blogtags" : "/blog/tags/",
     "sitemap" : "/sitemap.xml",
     "resume" : "/resume/"
   },

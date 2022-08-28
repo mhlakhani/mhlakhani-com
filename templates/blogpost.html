@@ -31,7 +31,7 @@ Prism.highlightAll();
                         {% for tag in tags %}
                             <div class="control">
                                 <div class="tags">
-                                    <a class="tag is-link" href="{{ url_for(route='tag', tag=tag) }}">{{ tag }}</a>
+                                    <a class="tag is-link" href="{{ url_for(route='blogtag', tag=tag) }}">{{ tag }}</a>
                                 </div>
                             </div>
                         {% endfor %}

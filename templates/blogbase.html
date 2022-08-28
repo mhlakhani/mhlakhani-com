@@ -8,20 +8,10 @@
                     <h3 class="menu-label">Blog Links</h3>
                     <ul class="menu-list">
                         <li><a href="{{ url_for(route='blogindex') }}">Home</a></li>
+                        <li><a href="{{ url_for(route='blogtags') }}">Tags</a></li>
                         <li><a href="{{ url_for(route='blogarchives') }}">Archives</a></li>
                         <li><a href="{{ url_for(route='blogrss') }}">RSS</a></li>
                     </ul>
-                    <h3 class="menu-label">Tags</h3>
-                    <div class="field is-grouped is-grouped-multiline">
-                        {% for entry in blog_tags_and_counts.entries %}
-                        <div class="control">
-                        <div class="tags has-addons">
-                            <span class="tag"><a href="{{ url_for(route='tag', tag=entry[0]) }}">{{ entry[0] }}</a></span>
-                            <span class="tag is-info">{{ entry[1] }}</span>
-                        </div>
-                        </div>
-                        {% endfor %}
-                    </div>
                 </aside>
             </div>
             <div class="tile is-parent is-10">
