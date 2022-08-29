@@ -3,17 +3,6 @@
 <section class="section">
     <div class="container">
         <div class="tile is-ancestor">
-            <div class="tile is-child">
-                <aside class="menu is-narrow-mobile is-fullheight">
-                    <h3 class="menu-label">Blog Links</h3>
-                    <ul class="menu-list">
-                        <li><a href="{{ url_for(route='blogindex') }}">Home</a></li>
-                        <li><a href="{{ url_for(route='blogtags') }}">Tags</a></li>
-                        <li><a href="{{ url_for(route='blogarchives') }}">Archives</a></li>
-                        <li><a href="{{ url_for(route='blogrss') }}">RSS</a></li>
-                    </ul>
-                </aside>
-            </div>
             <div class="tile is-parent is-10">
                 {% block content %}
                 {% endblock content %}
