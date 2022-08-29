@@ -1,8 +1,13 @@
 {
     "route" : "blogrss",
-    "title": "Hasnain Lakhani's Blog",
+    "title": "RSS",
+    "og_title": "Hasnain Lakhani's Blog - RSS",
     "link": "https://mhlakhani.com/blog/",
-    "description": "Hasnain Lakhani's Blog"
+    "description": "Hasnain Lakhani's Blog",
+    "navbar": {
+        "index": 2,
+        "group": "blog"
+    }
 }
 
 <rss version="2.0">
