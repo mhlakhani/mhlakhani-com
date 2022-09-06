@@ -23,6 +23,8 @@ There are a lot of valid reasons to fear feedback. Here are some that hit me for
 I could go on, but in the interest of time, let's stop here. Please let me know of your (least) favorite reason and I can add it here!
  
 Here's a secret. As the person giving the feedback, you can make it hurt less. Read on to learn how.
+
+{{ macros::image(src='https://phdcomics.com/comics/archive/phd021615s.gif', caption='Avoid giving feedback like this.') }}
   
 ## Aside: what is feedback anyway?
  
