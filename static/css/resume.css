@@ -598,4 +598,17 @@
   .ads-square {
     min-width: 250px;
     min-height: 100px; }
+
+    .fullprint {
+      flex:none;width:60%
+    }
   
+    @media print{
+      .noprint{
+          display:none;
+      }
+
+      .fullprint {
+        flex:none;width:100%
+      }
+   }
