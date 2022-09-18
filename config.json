@@ -9,8 +9,7 @@
     "blogtag" : "/blog/tag/{tag}/",
     "blogtags" : "/blog/tags/",
     "sitemap" : "/sitemap.xml",
-    "resume" : "/resume/",
-    "draft_resume" : "/resume/draft/0xdeadbeef/"
+    "resume" : "/resume/"
   },
   "blogpost_template": "blogpost.html",
   "source_dir": ".",
@@ -28,7 +27,6 @@
     "content/index.html": "DynamicContentSinglePage",
     "content/blogindex.html": "DynamicContentSinglePage",
     "content/resume.html": "DynamicContentSinglePage",
-    "content/draft_resume.html": "DynamicContentSinglePage",
     "content/blogtags.html": "DynamicContentSinglePage",
     "content/**/*.md": "DynamicContentBlogPost",
     "content/blogtag.html": "DynamicContentBlogpostTagPage",
