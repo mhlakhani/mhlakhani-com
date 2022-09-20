@@ -600,7 +600,7 @@
     min-height: 100px; }
 
     .fullprint {
-      flex:none;width:60%
+      flex:none;
     }
   
     @media print{
@@ -610,5 +610,10 @@
 
       .fullprint {
         flex:none;width:100%
+      }
+
+      .column.is-8 {
+        flex:none;
+        width:100%
       }
    }
