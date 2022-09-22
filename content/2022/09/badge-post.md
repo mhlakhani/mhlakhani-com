@@ -1,7 +1,7 @@
 {
     "route": "post",
     "title": "Leaving Meta",
-    "date": "2022/09/22",
+    "date": "2022/09/20",
     "tags": ["work", "facebook", "personal"],
     "excerpt": "Thoughts and reflections upon leaving Meta"
 }
