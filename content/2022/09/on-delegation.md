@@ -11,6 +11,8 @@ Delegation is critical as you go up the engineering career ladder, becoming expe
 
 Initially, I perceived delegation as just "giving work to someone else to do". But if that's all you do, you'll find that the work doesn't get done on time, it's poor quality, you end up wasting your own time, and the person you delegated the work to gets stuck and frustrated. This post will go into why you should delegate more than you feel comfortable with, and how to do that effectively.
 
+{{ macros::image(src='https://www.executiveforum.com/wp-content/uploads/2015/07/Delegate_cartoon.jpg', caption='Really, delegate more than you are comfortable with.') }}
+
 ## Why delegate?
 
 The cop-out answer: if you want to grow your career past a certain point: you *have* to delegate work. Or you simply won't get promoted or gain more responsibilities. Seniority is often a function of how much you can reliably get done, and there is only so much a single human being can do. To get more done, you have to scale yourself out. And to do that, you have to delegate.
