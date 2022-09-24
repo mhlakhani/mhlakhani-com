@@ -1,0 +1,72 @@
+{
+    "route": "services",
+    "title": "Services",
+    "navbar": {
+        "index": 3
+    }
+}
+
+{% extends "base.html" %}
+{% block body %}
+<section class="section">
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-child">
+                <div class="tile is-parent is-10 is-vertical" style="padding: 0rem;">
+                    <section class="hero">
+                        <div class="hero-body has-background">
+                            <h1 class="title is-1">Services</h1>
+                            <h2 class="subtitle">I offer a number of mentoring, coaching and consulting services, depending on your needs.</h2>
+                        </div>
+                    </section>
+                    <section class="section" style="padding-bottom: 1rem; padding-top: 1rem;">
+                        <div class="section-heading">
+                            <h3 class="title is-2" id="management">Management consulting</h3>
+                            <h4 class="subtitle">Are you looking to grow your team(members) or improve execution efficiency?</h4>
+                            <div class="container">
+                                <p>If your team is struggling to meet deadlines, or you're looking to improve your processes to make everyone more productive and happy, you've found the right person.
+                                I'll work with you to understand the root causes, suggest improvements, and implement them.
+                                Can also help with hiring, mentoring, software delivery or team best practices (e.g. project management, code reviews), and general management advice.</p>
+                                <p>To learn more about availability and pricing, drop me an email outlining what you're looking for.</p>
+                                <br />
+                                <a href="mailto:m.hasnain.lakhani@gmail.com?subject=Management Consulting Inquiry" class="button is-link is-small">Contact me</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section" style="padding-bottom: 1rem; padding-top: 1rem;">
+                        <div class="section-heading">
+                            <h3 class="title is-2" id="technical">Technical / architecture consulting</h3>
+                            <h4 class="subtitle">Are you looking for guidance on architecture or systems design?</h4>
+                            <div class="container">
+                                <p>Do you need expert review of your technical architecture for scalability and maintainability?
+                                    Is your system struggling to keep up with load?
+                                    I'll help you work through your design and find something that meets your requirements.
+                                    <strong>Note that this is limited to architecture discussions focusing on backend/system stuff. I won't write your code, and am not an expert on product/UI.</strong>
+                                </p>
+                                <p>To learn more about availability and pricing, drop me an email outlining what you're looking for.</p> 
+                                <br />
+                                <a href="mailto:m.hasnain.lakhani@gmail.com?subject=Technical Consulting Inquiry" class="button is-link is-small">Contact me</a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section" style="padding-bottom: 1rem; padding-top: 1rem;">
+                        <div class="section-heading">
+                            <h3 class="title is-2" id="career">Career Coaching</h3>
+                            <h4 class="subtitle">Struggling to get promoted? Want to progress to the next level? Want to switch jobs? Or feel happier in your career?</h4>
+                            <div class="container">
+                                <p>I provide both technical and organizational advice to software engineers to help them grow in their careers: ranging from how to become a better engineer, to growing their leadership skills, to project and time management, to creating a career plan, or to planning for and practicing interviews.
+                                    I can act as a sounding board for advice, a peer to learn a skill with you, or a coach to plan your career strategy with.
+                                    If you sign up, we'll meet periodically for a 1:1 (over VC) and connect over email more often for async discussions.
+                                </p>
+                                <p>To learn more about availability and pricing, drop me an email explaining your current situation and what you need help with.</p>
+                                <br />
+                                <a href="mailto:m.hasnain.lakhani@gmail.com?subject=Career Coaching Inquiry" class="button is-link is-small">Contact me</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}
