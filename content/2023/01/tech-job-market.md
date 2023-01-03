@@ -24,11 +24,11 @@ I started looking in mid/late September and wrapped things up by mid-December. H
 
 My goal through the process was to find a place I'd be happy learning and growing for at least 4-5 years, and discover what type of work I wanted to do next (e.g. nonprofit, big company, small company, different industries, management vs engineering, etc). So, throughout this process, I applied to a lot more places than I would have done. But, hey, as a candidate, we get to interview companies just as much as they interview us, so I decided to use this opportunity accordingly. In terms of companies. A rough count of the numbers below:
 
-* There were ~35 companies I tracked on my list (applied to most but not all of these)
-* I applied online to 14 places, of those I only heard back from 6. Referrals matter!
-* I generally get a lot of recruiter spam - but started paying attention now. I went through with 4 of the reach outs, 2 of which went pretty far.
-* I used referrals to get help applying at 9 companies. I heard back from all of these. Referrals really matter.
-* I dropped out of the process at 4 companies during the exploratory stage, 3 had no roles open/filled early on in the process, and I dropped out of the process at 3 places after deciding it wasn't a good fit after a few interviews.
+* There were ~35 companies I tracked on my list, of which I applied to 27:
+    * I applied online to 14 places, of those I only heard back from 6.
+    * I used referrals to get help applying at 9 companies. I heard back from all of these. Referrals really mattered in terms of getting a response!
+    * I generally get a lot of recruiter spam - but I started paying attention now. I accepted 4 of the reach outs, 2 of which went pretty far.
+* I dropped out of the process at 4 companies during the exploratory stage, 3 had no roles open/fille their openings early on in the process, and I dropped out of the process at 3 places after deciding it wasn't a good fit after a few interviews.
 * I completed full interview loops at 13 companies and received 11 offers. I'm glad I got the rejections I did - it was clear there wasn't a mutual match.
 
 In the future, I likely won't apply as much. Depending on your needs you might have to apply to a similar amount of companies but I don't recommend going through interview loops at this many companies unless you're actively exploring. At the same time, since nerves really get to me, calming myself down by lowering the stakes (if I messed up with one company, it's ok, I am applying to a lot of others) *really* helps since you feel less stressed in each  interview.
@@ -84,14 +84,14 @@ Treating prep seriously, like a job, really helped. I would get down and carve o
 
 ### Coding interviews
 
-Ah, the dreaded coding interview. Unfortunately, these will happen for most places you interview at, *especially* for FAANG roles. There's no way around these except for practice. I spent a good amount of time on LeetCode just going over a lot of questions, trying my hand at solving them, and then reading through the other solutions. All in all, I'd say about ~60 or so questions (on the lower side).
+Ah, the dreaded coding interview. Unfortunately, these will happen for most places you interview at, *especially* for FAANG roles. There's no way around these except for practice. I spent a good amount of time on LeetCode just going over a lot of questions, trying my hand at solving them, and then reading through the other solutions. All in all, I'd say I did about ~60 or so questions (on the lower side).
 
-Here are a few tips I found helpful:
+Here are a few tips I found helpful when practicing leetcode:
 
-* For the interview itself: think out loud (the interviewer can't read your mind), talk through what you are thinking, and get buy-in on the approach before coding. Watch for hints! And, lastly, remember to test your code thoroughly - look at what you wrote, not what you *think* you wrote.
 * Don't worry about doing all the questions (there are way too many) - do go over questions from companies you're planning to interview at, though
 * Focus on *topics* - e.g. do a few tree questions, a few greedy algorithm questions, etc. You'll most likely face an unfamiliar problem in the interview and the most useful thing you can do is to be ready to quickly slot it into "ah, I can use a tree here" and then apply familiar techniques.
 * Take it seriously. When I started, I'd just do the question leisurely and try to learn, look things up, etc. That didn't help much when it came to a real interview setting. So, try to time yourself, and approach it like you would a real interview, including testing.
+* For the interview itself: think out loud (the interviewer can't read your mind), talk through what you are thinking, and get buy-in on the approach before coding. Watch for hints! And, lastly, remember to test your code thoroughly - look at what you wrote, not what you *think* you wrote.
 
 ### System design interviews
 
@@ -137,7 +137,7 @@ Throughout the process, you're interviewing companies too, to find the right fit
 
 In my case, after the first few interviews, I realized I needed to update my criteria so I went back and redid everything - and then had a bunch of follow-ups to ask places.
 
-If you're not sure about what criteria to use, [this one is a great list](https://docs.google.com/spreadsheets/d/11DoQ-Bhvs5mfRwB0Bz6OHwoChhFVK7u_KqlbFgR-ezY/edit#gid=0).
+If you're not sure about which questions to ask, [this one is a great list](https://docs.google.com/spreadsheets/d/11DoQ-Bhvs5mfRwB0Bz6OHwoChhFVK7u_KqlbFgR-ezY/edit#gid=0).
 
 Note that you will likely be under pressure to decide early on (companies will push for this). So make sure your criteria are ready and you have the info you need. Or be willing to push back hard to get more time to decide.
 
