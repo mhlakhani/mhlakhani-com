@@ -101,7 +101,7 @@ How could I get images over? This was going to be a bit tricky, or so I thought.
 
 I lucked out in that the upcoming version (1.17) of `gitea` provides a `docker` container registry. I upgraded my install to use the `dev` branch. With a registry in place, I could change my `.drone.yml` to push images to the registry, and my `docker-compose.yml` to fetch from there. Here's what I had to set up in my `drone` config:
 
-<pre class="language-yaml" style="margin-inline-end: -10em">
+<pre class="language-yaml">
 <code class="language-yaml">
 - name: generate_tags
   image: rustlang/rust:nightly
@@ -186,7 +186,7 @@ Recall I'm using `nginx` still as a reverse proxy infront of all my sites. I was
 
 Here's what the relevant portion of my nginx config looks like for `git.mhlakhani.com`:
 
-<pre class="language-nginx" style="margin-inline-end: -15em">
+<pre class="language-nginx">
 <code class="language-nginx">location / {
         satisfy any;
         # Allow drone
@@ -239,8 +239,8 @@ You can, actually! The long way around is to have the app directly talk to `tail
 
 For a `Rocket` app like my reads site, this was fairly easy to add to my `AdminUser` guard:
 
-<pre class="language-rust" style="margin-inline-end: -10em">
-<code class="language-rust" style="margin-inline-end: -10em">
+<pre class="language-rust">
+<code class="language-rust">
 // Lastly, try webauth
 // Do we have a header that matches?
 return match request.headers().get_one("X-Webauth-Email") {
@@ -286,7 +286,7 @@ The solution was to use the `dns-01` challenge with a custom script to update th
 
 I ended up cooking up a simple python script for this (based on that code) and using it with certbot:
 
-<pre class="language-python" style="margin-inline-end: -10em">
+<pre class="language-python">
 <code class="language-python">
 #!/usr/bin/env python3
 

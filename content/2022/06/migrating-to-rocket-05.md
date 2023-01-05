@@ -116,7 +116,7 @@ Now that everything is async, I realized I needed to move to using `tokio`'s asy
 
 The changes were mostly like this:
 
-<pre class="language-diff-rust diff-highlight" style="margin-inline-end: -10em">
+<pre class="language-diff-rust diff-highlight">
 <code class="language-diff-rust diff-highlight">
 -use std::sync::Mutex;
 +use tokio::sync::Mutex;
@@ -141,7 +141,7 @@ That wasn't enough - I could also optimize some of my code now! I was using `req
 
 This code could all be cleaned up:
 
-<pre class="language-diff-rust diff-highlight" style="margin-inline-end: -10em">
+<pre class="language-diff-rust diff-highlight">
 <code class="language-diff-rust diff-highlight">
 -pub fn refetch_single_post(id: &str, conn: &SqliteConnection) -> ... {
 -    let mut tokio = Runtime::new()?;
@@ -174,7 +174,7 @@ The config management [has been revamped](https://rocket.rs/v0.5-rc/guide/upgrad
 
 This became much easier now - just define a struct with your fields that implements `Deserialize`, and extract it:
 
-<pre class="language-rust" style="margin-inline-end: -10em">
+<pre class="language-rust">
 <code class="language-rust">
 #[derive(Debug, Deserialize)]
 struct BaseConfig {
@@ -200,7 +200,7 @@ This code needed to be invoked differently though - I'll touch on that in the in
 
 Following the recommendations on the [rocket guide](https://rocket.rs/v0.5-rc/guide/requests/#forwarding-guards), I have an `AdminUser` implemented as a request guard. The type signature, and the mechanism to access cookies changed a little, but it was fairly minor:
 
-<pre class="language-diff-rust diff-highlight" style="margin-inline-end: -15em">
+<pre class="language-diff-rust diff-highlight">
 <code class="language-diff-rust diff-highlight">
 -impl&lt;'a, 'r&gt; FromRequest&lt;'a, 'r&gt; for AdminUser {
 +#[rocket::async_trait]
@@ -248,7 +248,7 @@ Rocket now comes with its own helper macros to help with initialization and runn
 
 This wasn't sufficient for my needs though. I had some custom initialization for e.g. migrations and state types which needed access to both the `Rocket` object and a DB connection. This had to change a little:
 
-<pre class="language-diff-rust diff-highlight" style="margin-inline-end: -5em">
+<pre class="language-diff-rust diff-highlight">
 <code class="language-diff-rust diff-highlight">
 -let connection = db::DbConn::get_one(&runner);
 -if let Some(connection) = connection {
