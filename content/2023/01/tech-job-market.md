@@ -7,7 +7,7 @@
 }
 
 
-[After leaving Meta recently](/2022/09/badge-post/), I decided it was finally time to start looking for a job again. It's been quite an experience doing it amid a recession and layoffs (I have thankfully been quite lucky). I thought I'd share how I approached the job hunt as a few people had asked for advice. 
+[After leaving Meta recently](/blog/2022/09/badge-post/), I decided it was finally time to start looking for a job again. It's been quite an experience doing it amid a recession and layoffs (I have thankfully been quite lucky). I thought I'd share how I approached the job hunt as a few people had asked for advice. 
 
 {{ macros::image(src='/static/img/2023/01/in_this_economy.png', caption='When I told people about leaving a job without anything lined up.') }}
 
