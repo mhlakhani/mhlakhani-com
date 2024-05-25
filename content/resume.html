@@ -40,11 +40,11 @@
     <section class="profile section">
         <div class="container">
             <div class="columns">
-                <div class="column is-two-fifths">
+                <div class="column">
                     <h1 class="title is-size-1">Hasnain Lakhani</h1>
                     <p class="subtitle">Software Engineer / Manager</p>
                 </div>
-                <div class="column has-text-grey-light has-text-right">
+                <div class="column has-text-grey-light has-text-right noprint">
                     <p class="has-text-weight-light">
                         San Mateo, California
                     </p>
@@ -132,9 +132,9 @@
                             </div>
                             <p>
                                 Working on various security initiatives: 
-                                Security infrastructure (rolled out authorization to ~100s of internal services, drove TLS1.3 adoption for compliance, improved mTLS between our control and data planes), 
-                                Security features in the product (TLS based internode encryption in Spark, key management at the storage layer for a new product feature),
-                                Application Security (co-drove a company wide effort to shift left by writing secure frameworks and static analysis checks),
+                                Security infrastructure (rolled out authorization to ~100s of internal services, drove TLS1.3 adoption for compliance, improved mTLS support, RPC layer validations to prevent DoS), 
+                                Security features in the product (TLS encryption in Spark, storage layer key management),
+                                Application Security (co-drove a company wide effort to shift left by writing secure frameworks and static analysis checks, driving a new effort to kill security/privacy incidents),
                                 Lots of miscellaneous security work (design reviews, encryption in transit, fuzzing, taint analysis, dead code cleanup, secrets detection).
                             </p>
                         </div>
@@ -152,10 +152,10 @@
                             </div>
                             <p>
                                 Tech lead for the dynamic analysis team. <b>Defined and drove a multi-year strategy for fuzzing</b>;
-                                which was followed by our team as well as partner teams. Worked with customer teams to adopt fuzzing, built
-                                and scaled our infrastructure, simplified our developer tools, and found ways to get better results. <b>During this period,
+                                adopted by multiple teams. Worked with teams to adopt fuzzing, built
+                                and scaled infrastructure, simplified developer tools, and achieved better results. <b>During this time,
                                 the team had its best year in terms of usage (teams and engineers across the company) and bugs found.</b> 
-                                Explored other ways to apply dynamic analysis to security and privacy applications to solve company critical problems (e.g. dynamic taint analysis for Hack code).
+                                Explored other ways to apply dynamic analysis to security / privacy applications to solve critical problems (e.g. dynamic taint analysis for Hack code).
                             </p>
                             <br />
                             <div class="is-size-7">
@@ -166,13 +166,12 @@
                             </div>
                             <p>
                                 <b>Tech lead manager, grew the team from 1->7 engineers as we built out a new fuzzing
-                                platform to meet growing internal demand.</b>
+                                platform to meet growing demand.</b>
                                 Primarily focused on the team: supporting people (and their career growth), hiring, resolving conflicts, defining the team charter; spent the rest of my
                                 time on technical direction and collaboration across multiple organizations; ensuring
                                 we had a steady flow of engineers that were happy with our platform.
                                 <br />
-                                Ended up building the team I always dreamed of working on as an engineer, and realized I
-                                wanted to be more hands on for a while, so I transitioned back to being an engineer.
+                                Ended up building the team I always dreamed of working on as an engineer, so I transitioned back to being an engineer.
                             </p>
                             <br />
                             <div class="is-size-7">
@@ -184,7 +183,7 @@
                             <p>
                                 First engineer on the Dynamic Analysis team; maintaining an internal auditing and alerting system.
                                 Primary engineer responsible for Invariant Detector (IVD), which <b>automatically
-                                learnt privacy rules and enforced them on every single write to TAO (many millions/s)</b>. Lead a small team to make IVD a product,
+                                learnt privacy rules and enforced them on every single write to TAO (many millions/s)</b>. Lead a small team to make it a product,
                                 vastly increasing adoption. Worked with Instagram's security team to apply IVD to 
                                 their codebase; <b>unblocking a company-wide critical migration to secure user data -
                                 the team received an IG-wide award for this work.</b>
@@ -197,10 +196,7 @@
                                 <div class="tag is-primary">OCT 2014 - JUN 2016</div>
                             </div>
                             <p>
-                                Worked on the ads and pages reporting backend team to deliver high quality realtime
-                                insights to advertisers.
-                                I owned large scale data migrations from a legacy backend to the next-generation one, and
-                                focused on scaling challenges. I also built out a backfill system for disaster recovery.
+                                Delivered real time insights to advertisers, focusing on large scale data migrations, scaling challenges, and disaster recovery.
                             </p>
                         </div>
 
@@ -216,7 +212,7 @@
                             </div>
                             <p>
                                 Designed and implemented usable, efficient security protocols for next-generation
-                                content-centric mobile networks. Owned the testing, simulation, and analysis of realistic scenarios
+                                content-centric mobile networks. Owned testing, simulation, and analysis of realistic scenarios
                                 on both physical and virtual devices; critical for DARPA acceptance of our code.
                                 This work lead to <a href="{{ url_for(route='publications') }}" target="_blank">four
                                     conference publications</a>, and the code was <a
@@ -231,13 +227,9 @@
                             </div>
                             <br />
                             <ul style="list-style: disc; margin-left: 1em">
-                                <li>Researched computer networks, systems, and data provenance <i>at LUMS</i> from
-                                    <i>June 2011 to June 2013</i>.</li>
-                                <li>Studied authorization protocols as an <i>International Fellow</i> at <i>SRI
-                                        International</i> from <i>Aug 2012 to Jan 2013</i>.</li>
-                                <li>Part-time CTO for <a href="http://www.anahatasolutions.co/" target="_blank">Anahata
-                                        Solutions</a> from <i>June 2010 to May 2013</i>. I developed the initial line of
-                                    apps.</li>
+                                <li>Researched computer networks, systems, and data provenance <i>at LUMS</i> (06/11 - 06/2013)</li>
+                                <li>Studied authorization protocols at <i>SRI International</i> (08/2012 - 01/2013).</li>
+                                <li>Part-time CTO for <a href="http://www.anahatasolutions.co/" target="_blank">Anahata Solutions</a> from (06/2010 - 05/2013).
                             </ul>
                         </div>
                     </div>
